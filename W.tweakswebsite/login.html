@@ -115,8 +115,10 @@
     </div>
 
     <script>
-        // --- PUT YOUR DISCORD CLIENT ID HERE ---
-        const CLIENT_ID = 'PASTE_YOUR_DISCORD_CLIENT_ID_HERE';
+        // ---------------------------------------------------------
+        // PASTE YOUR DISCORD CLIENT ID INSIDE THE QUOTES BELOW:
+        const CLIENT_ID = '1539275680716554340';
+        // ---------------------------------------------------------
 
         function startDiscordLogin() {
             const redirectUri = window.location.origin + window.location.pathname;
@@ -124,7 +126,6 @@
             window.location.href = discordAuthUrl;
         }
 
-        // When Discord redirects back, read the access token from the URL
         window.onload = async function() {
             const fragment = new URLSearchParams(window.location.hash.slice(1));
             const accessToken = fragment.get('access_token');
@@ -134,7 +135,6 @@
                 document.getElementById('loginBtn').style.display = 'none';
 
                 try {
-                    // Fetch real user data from Discord API
                     const response = await fetch('https://discord.com/api/users/@me', {
                         headers: {
                             authorization: `Bearer ${accessToken}`,
@@ -144,7 +144,6 @@
 
                     if (userData.id) {
                         if (window.opener) {
-                            // Send real user info back to your main page dashboard
                             window.opener.postMessage({
                                 id: userData.id,
                                 username: userData.username,
@@ -155,7 +154,7 @@
                             document.getElementById('status-msg').innerText = "Successfully logged in as " + userData.username + "!";
                         }
                     } else {
-                        document.getElementById('status-msg').innerText = "Failed to fetch profile. Please try again.";
+                        document.getElementById('status-msg').innerText = "Failed to fetch profile.";
                     }
                 } catch (err) {
                     console.error(err);
