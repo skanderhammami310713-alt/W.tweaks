@@ -897,10 +897,10 @@
 
                 <div class="glass-card discount-card">
                     <h3 style="font-size: 16px; font-weight: 700;">Apply Promo Code</h3>
-                    <p style="color: var(--text-muted); font-size: 13px; margin-top: 4px;">Enter a valid code below (e.g. example).</p>
+                    <p style="color: var(--text-muted); font-size: 13px; margin-top: 4px;">Enter a valid code below (e.g. lrry15).</p>
                     
                     <div class="discount-input-group">
-                        <input type="text" id="discountInput" class="discount-input" placeholder="e.g. example">
+                        <input type="text" id="discountInput" class="discount-input" placeholder="e.g. lrry15">
                         <button class="btn btn-primary" style="width: auto; padding: 0 24px;" onclick="applyDiscountCode()">Redeem</button>
                     </div>
 
@@ -1378,7 +1378,7 @@
             const input = document.getElementById('discountInput').value.trim().toLowerCase();
             const status = document.getElementById('discountStatus');
 
-            if (input === 'redanks' || input === 'vexo') {
+            if (input === 'redanks' || input === 'vexo' || input === 'lrry15') {
                 discountActive = true;
                 appliedDiscountName = input;
                 status.className = 'discount-status success';
