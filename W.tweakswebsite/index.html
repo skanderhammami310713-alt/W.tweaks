@@ -848,6 +848,17 @@
                         <p style="color: var(--text-muted); font-size: 13px;">View optimization tiers.</p>
                         <span class="click-hint">Click to Open →</span>
                     </div>
+
+                    <!-- Epic Games Store Square Card -->
+                    <div class="glass-card tweak-card" style="display: flex; flex-direction: column; align-items: center; text-align: center; max-width: 240px;" onclick="openStoreModal('Epic Games Store')">
+                        <div style="width: 140px; height: 140px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.3); border-radius: 12px; border: 1px solid var(--border-color); overflow: hidden;">
+                            <img src="Epic-Games-logo-500x281.webp" alt="Epic Games Store" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="fallback-logo" style="display:none; width: 100%; height: 100%; font-size: 48px; border-radius: 0; background: transparent; border: none; font-weight: 900; color: #fff;">E</div>
+                        </div>
+                        <h3 style="color: var(--text-main); font-size: 18px; font-weight: 700; margin-bottom: 4px;">Epic Games Store</h3>
+                        <p style="color: var(--text-muted); font-size: 13px;">View store offers.</p>
+                        <span class="click-hint">Click to Open →</span>
+                    </div>
                 </div>
             </div>
 
@@ -900,7 +911,7 @@
                     <p style="color: var(--text-muted); font-size: 13px; margin-top: 4px;">valid code below</p>
                     
                     <div class="discount-input-group">
-                        <input type="text" id="discountInput" class="discount-input" placeholder="e.g.example">
+                        <input type="text" id="discountInput" class="discount-input" placeholder="e.g. example">
                         <button class="btn btn-primary" style="width: auto; padding: 0 24px;" onclick="applyDiscountCode()">Redeem</button>
                     </div>
 
@@ -999,7 +1010,7 @@
                 </div>
             </div>
 
-            <!-- V-Bucks & Fortnite Items Pricing Selection View -->
+            <!-- V-Bucks & Fortnite Items Pricing Selection View (Fortnite Crew Removed) -->
             <div id="vbucksPricingView" class="pricing-container vbucks-grid" style="display: none;">
                 <!-- 800 V-Bucks -->
                 <div class="pricing-card">
@@ -1075,25 +1086,6 @@
                         </div>
                     </div>
                     <button class="btn btn-primary" onclick="openCheckout('12,500 V-Bucks')">Get Started</button>
-                </div>
-
-                <!-- Fortnite Crew -->
-                <div class="pricing-card">
-                    <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
-                        <img src="Fortnite-Crew-Subscription-Logo.png" alt="Fortnite Crew" style="max-height: 100%; object-fit: contain;">
-                    </div>
-                    <div style="text-align: center; font-weight: 700; font-size: 16px;">Fortnite Crew</div>
-                    <div class="price-box">
-                        <div class="main-price">
-                            <span class="price-original" data-orig="45 DT">45 DT</span>
-                            <span class="price-discounted" style="display:none;"></span>
-                        </div>
-                        <div class="sub-prices">
-                            <span class="sub-original" data-orig="$25.99 • 19.99 €">$25.99 • 19.99 €</span>
-                            <span class="sub-discounted" style="display:none;"></span>
-                        </div>
-                    </div>
-                    <button class="btn btn-primary" onclick="openCheckout('Fortnite Crew')">Get Started</button>
                 </div>
 
                 <!-- Battle Pass -->
@@ -1235,6 +1227,10 @@
                 document.getElementById('modalPricingView').style.display = 'none';
                 document.getElementById('vbucksPricingView').style.display = 'grid';
                 document.getElementById('modalSubtitle').innerText = 'Select your Fortnite items and V-Bucks bundle.';
+            } else if (category === 'Epic Games Store') {
+                document.getElementById('vbucksPricingView').style.display = 'none';
+                document.getElementById('modalPricingView').style.display = 'grid';
+                document.getElementById('modalSubtitle').innerText = 'Select your Epic Games Store items and offers.';
             } else {
                 document.getElementById('vbucksPricingView').style.display = 'none';
                 document.getElementById('modalPricingView').style.display = 'grid';
@@ -1263,7 +1259,7 @@
             document.getElementById('checkoutFormView').classList.remove('active');
             document.getElementById('successMessageBox').classList.remove('show');
 
-            if (selectedProduct.includes('V-Bucks') || selectedProduct.includes('Fortnite Crew') || selectedProduct.includes('Battle Pass')) {
+            if (selectedProduct.includes('V-Bucks') || selectedProduct.includes('Battle Pass')) {
                 document.getElementById('vbucksPricingView').style.display = 'grid';
                 document.getElementById('modalSubtitle').innerText = 'Select your Fortnite items and V-Bucks bundle.';
             } else {
