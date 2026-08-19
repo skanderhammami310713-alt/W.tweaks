@@ -831,7 +831,7 @@
             </div>
 
             <!-- SHOP TAB -->
-            <div class="tab-content" id="tab-shop">
+            <div class="tab-content active" id="tab-shop">
                 <div class="header">
                     <h1>Shop</h1>
                     <p>Explore games and customized performance add-ons.</p>
@@ -851,9 +851,12 @@
 
                     <!-- Epic Games Store Square Card -->
                     <div class="glass-card tweak-card" style="display: flex; flex-direction: column; align-items: center; text-align: center; max-width: 240px;" onclick="openStoreModal('Epic Games Store')">
-                        <div style="width: 140px; height: 140px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.3); border-radius: 12px; border: 1px solid var(--border-color); overflow: hidden;">
-                            <img src="Epic-Games-logo-500x281_3.webp" alt="Epic Games Store" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="fallback-logo" style="display:none; width: 100%; height: 100%; font-size: 48px; border-radius: 0; background: transparent; border: none; font-weight: 900; color: #fff;">E</div>
+                        <div style="width: 140px; height: 140px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; background: rgba(18, 22, 32, 0.9); border-radius: 12px; border: 1px solid var(--border-color); overflow: hidden; padding: 15px;">
+                            <svg viewBox="0 0 500 281" style="width: 100%; height: 100%;" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M130 40 H370 V180 L250 235 L130 180 Z" fill="#1a1f2c" stroke="#3a445d" stroke-width="6"/>
+                                <text x="250" y="118" font-family="system-ui, sans-serif" font-weight="900" font-size="68" fill="#ffffff" text-anchor="middle" letter-spacing="6">EPIC</text>
+                                <text x="250" y="172" font-family="system-ui, sans-serif" font-weight="700" font-size="28" fill="#ffffff" text-anchor="middle" letter-spacing="10">GAMES</text>
+                            </svg>
                         </div>
                         <h3 style="color: var(--text-main); font-size: 18px; font-weight: 700; margin-bottom: 4px;">Epic Games Store</h3>
                         <p style="color: var(--text-muted); font-size: 13px;">View store offers.</p>
