@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>W.Tweaks</title>
-    <meta name="description" content="Official website for W.Tweaks system performance and tools.">
-</head>
-    <meta name="google-site-verification" content="9JVDMTtOknv4_TYcl3yTYNh2T254dSzjB1bNI3OFN78" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>W.Tweaks | Premium Performance</title>
+    <meta name="description" content="Official website for W.Tweaks system performance and tools.">
+    <meta name="google-site-verification" content="9JVDMTtOknv4_TYcl3yTYNh2T254dSzjB1bNI3OFN78" />
     
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
@@ -703,6 +701,7 @@
                 <div class="nav-item active" onclick="switchTab('account', this)">Account</div>
                 <div class="nav-item" onclick="switchTab('our-tweaks', this)">Our Tweaks</div>
                 <div class="nav-item" onclick="switchTab('macros', this)">Macros</div>
+                <div class="nav-item" onclick="switchTab('shop', this)">Shop</div>
                 <div class="nav-item" onclick="switchTab('payment-methods', this)">Payment Method</div>
                 <div class="nav-item" onclick="switchTab('discounts', this)">Discounts</div>
                 <div class="nav-item" onclick="switchTab('free-tweaks', this)">Free Tweaks</div>
@@ -848,6 +847,24 @@
                             <li>99.9% Secure from Anticheat</li>
                         </ul>
                         <button class="btn btn-primary" onclick="openMacroModal('Deluxe Macro')">Get Started</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SHOP TAB -->
+            <div class="tab-content" id="tab-shop">
+                <div class="header">
+                    <h1>Shop</h1>
+                    <p>Explore games and customized performance add-ons.</p>
+                </div>
+
+                <div class="tweaks-grid">
+                    <!-- Fortnite Square Card -->
+                    <div class="glass-card tweak-card" style="display: flex; flex-direction: column; align-items: center; text-align: center; max-width: 240px;" onclick="openStoreModal('Fortnite')">
+                        <img src="471_9d140.webp" alt="Fortnite" style="width: 140px; height: 140px; object-fit: cover; border-radius: 12px; margin-bottom: 16px; border: 1px solid var(--border-color);">
+                        <h3 style="color: var(--text-main); font-size: 18px; font-weight: 700; margin-bottom: 4px;">Fortnite</h3>
+                        <p style="color: var(--text-muted); font-size: 13px;">View optimization tiers.</p>
+                        <span class="click-hint">Click to Open →</span>
                     </div>
                 </div>
             </div>
@@ -1373,4 +1390,3 @@
     </script>
 </body>
 </html>
-
