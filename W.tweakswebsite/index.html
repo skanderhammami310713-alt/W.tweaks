@@ -852,121 +852,25 @@
                 </div>
             </div>
 
-         <!-- SHOP TAB -->
+            <!-- SHOP TAB -->
             <div class="tab-content" id="tab-shop">
-                
-                <!-- VIEW 1: Main Shop Overview (Shows the Fortnite Card) -->
-                <div id="shopMainView">
-                    <div class="header">
-                        <h1>Shop</h1>
-                        <p>Explore games and customized performance add-ons.</p>
-                    </div>
-
-                    <div class="pricing-card" onclick="showFortniteStore()" style="cursor: pointer; width: 220px; transition: transform 0.2s;">
-                        <div style="width: 100%; height: 160px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
-                            <img src="YOUR_FORTNITE_LOGO_OR_IMAGE_URL" alt="Fortnite" style="max-height: 100%; object-fit: contain;">
-                        </div>
-                        <div style="text-align: center; font-weight: 700; font-size: 16px;">Fortnite</div>
-                        <div style="text-align: center; font-size: 13px; color: #9ca3af; margin-top: 4px;">View optimization tiers.</div>
-                        <div style="text-align: center; color: #3b82f6; font-weight: 600; margin-top: 10px;">Click to Open →</div>
-                    </div>
+                <div class="header">
+                    <h1>Shop</h1>
+                    <p>Explore games and customized performance add-ons.</p>
                 </div>
 
-                <!-- VIEW 2: The 6-Item Store Grid (Hidden by default) -->
-                <div id="shopGridView" style="display: none;">
-                    <div class="header" style="display: flex; align-items: center; justify-content: space-between;">
-                        <div>
-                            <h1>W.Tweaks Store</h1>
-                            <p>Select your Fortnite items and V-Bucks bundle.</p>
+                <div class="tweaks-grid">
+                    <!-- Fortnite Square Card -->
+                    <div class="glass-card tweak-card" style="display: flex; flex-direction: column; align-items: center; text-align: center; max-width: 240px;" onclick="openStoreModal('Fortnite')">
+                        <div style="width: 140px; height: 140px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.3); border-radius: 12px; border: 1px solid var(--border-color); overflow: hidden;">
+                            <img src="fortnite-logo.webp" alt="Fortnite" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="fallback-logo" style="display:none; width: 100%; height: 100%; font-size: 48px; border-radius: 0; background: transparent; border: none; font-weight: 900; color: #fff;">F</div>
                         </div>
-                        <button class="btn btn-secondary" onclick="backToShopMain()" style="width: auto; padding: 8px 16px;">← Back</button>
-                    </div>
-
-                    <div id="shopDiscountBanner" class="discount-active-banner" style="display:none;">
-                        <span>🔥 You Got 15% Off Active! Prices are updated.</span>
-                    </div>
-
-                    <div class="pricing-container vbucks-grid" style="margin-top: 0;">
-                        <!-- 800 V-Bucks -->
-                        <div class="pricing-card">
-                            <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
-                                <img src="https://cdn2.unrealengine.com/fortnite-800-v-bucks-ico-512x512-512x512-d816a7bf6e49.png" alt="800 V-Bucks" style="max-height: 100%; object-fit: contain;">
-                            </div>
-                            <div style="text-align: center; font-weight: 700; font-size: 16px;">800 V-Bucks</div>
-                            <div class="price-box">
-                                <div class="main-price"><span class="price-original">39 DT</span></div>
-                                <div class="sub-prices"><span class="sub-original">$19.99 • 14.99 €</span></div>
-                            </div>
-                            <button class="btn btn-primary" onclick="openShopCheckout('800 V-Bucks')">Get Started</button>
-                        </div>
-
-                        <!-- 2,400 V-Bucks -->
-                        <div class="pricing-card">
-                            <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
-                                <img src="https://cdn2.unrealengine.com/fortnite-2800-v-bucks-ico-512x512-512x512-9c16a7bf6e49.png" alt="2,400 V-Bucks" style="max-height: 100%; object-fit: contain;">
-                            </div>
-                            <div style="text-align: center; font-weight: 700; font-size: 16px;">2,400 V-Bucks</div>
-                            <div class="price-box">
-                                <div class="main-price"><span class="price-original">77 DT</span></div>
-                                <div class="sub-prices"><span class="sub-original">$29.99 • 25.99 €</span></div>
-                            </div>
-                            <button class="btn btn-primary" onclick="openShopCheckout('2,400 V-Bucks')">Get Started</button>
-                        </div>
-
-                        <!-- 4,500 V-Bucks -->
-                        <div class="pricing-card">
-                            <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
-                                <img src="https://cdn2.unrealengine.com/fortnite-5000-v-bucks-ico-512x512-512x512-4216a7bf6e49.png" alt="4,500 V-Bucks" style="max-height: 100%; object-fit: contain;">
-                            </div>
-                            <div style="text-align: center; font-weight: 700; font-size: 16px;">4,500 V-Bucks</div>
-                            <div class="price-box">
-                                <div class="main-price"><span class="price-original">120 DT</span></div>
-                                <div class="sub-prices"><span class="sub-original">$45.99 • 40.99 €</span></div>
-                            </div>
-                            <button class="btn btn-primary" onclick="openShopCheckout('4,500 V-Bucks')">Get Started</button>
-                        </div>
-
-                        <!-- 12,500 V-Bucks -->
-                        <div class="pricing-card">
-                            <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
-                                <img src="https://cdn2.unrealengine.com/fortnite-13500-v-bucks-ico-512x512-512x512-8816a7bf6e49.png" alt="12,500 V-Bucks" style="max-height: 100%; object-fit: contain;">
-                            </div>
-                            <div style="text-align: center; font-weight: 700; font-size: 16px;">12,500 V-Bucks</div>
-                            <div class="price-box">
-                                <div class="main-price"><span class="price-original">275 DT</span></div>
-                                <div class="sub-prices"><span class="sub-original">$99.99 • 87.99 €</span></div>
-                            </div>
-                            <button class="btn btn-primary" onclick="openShopCheckout('12,500 V-Bucks')">Get Started</button>
-                        </div>
-
-                        <!-- Fortnite Crew -->
-                        <div class="pricing-card">
-                            <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
-                                <img src="https://cdn2.unrealengine.com/fortnite-crew-pack-icon-512x512-512x512-1116a7bf6e49.png" alt="Fortnite Crew" style="max-height: 100%; object-fit: contain;">
-                            </div>
-                            <div style="text-align: center; font-weight: 700; font-size: 16px;">Fortnite Crew</div>
-                            <div class="price-box">
-                                <div class="main-price"><span class="price-original">45 DT</span></div>
-                                <div class="sub-prices"><span class="sub-original">$25.99 • 19.99 €</span></div>
-                            </div>
-                            <button class="btn btn-primary" onclick="openShopCheckout('Fortnite Crew')">Get Started</button>
-                        </div>
-
-                        <!-- Battle Pass -->
-                        <div class="pricing-card">
-                            <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
-                                <img src="https://cdn2.unrealengine.com/fortnite-battle-pass-icon-512x512-512x512-3316a7bf6e49.png" alt="Battle Pass" style="max-height: 100%; object-fit: contain;">
-                            </div>
-                            <div style="text-align: center; font-weight: 700; font-size: 16px;">Battle Pass</div>
-                            <div class="price-box">
-                                <div class="main-price"><span class="price-original">39 DT</span></div>
-                                <div class="sub-prices"><span class="sub-original">$19.99 • 14.99 €</span></div>
-                            </div>
-                            <button class="btn btn-primary" onclick="openShopCheckout('Battle Pass')">Get Started</button>
-                        </div>
+                        <h3 style="color: var(--text-main); font-size: 18px; font-weight: 700; margin-bottom: 4px;">Fortnite</h3>
+                        <p style="color: var(--text-muted); font-size: 13px;">View optimization tiers.</p>
+                        <span class="click-hint">Click to Open →</span>
                     </div>
                 </div>
-
             </div>
 
             <!-- PAYMENT METHOD TAB -->
@@ -980,7 +884,7 @@
                     <!-- Izi Zitouna Payment -->
                     <div class="payment-card">
                         <div class="logo-container">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Attijari_Bank_Tunisie_Logo.svg" alt="Izi Zitouna Payment" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <img src="izi-zitouna-logo.png" alt="Izi Zitouna Payment" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="fallback-logo" style="display:none;">IZ</div>
                         </div>
                         <span class="payment-title">Izi Zitouna Payment</span>
@@ -989,7 +893,7 @@
                     <!-- Virement Bancaire -->
                     <div class="payment-card">
                         <div class="logo-container">
-                            <img src="https://cdn-icons-png.flaticon.com/512/2830/2830284.png" alt="Virement Bancaire" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <img src="bank-logo.webp" alt="Virement Bancaire" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="fallback-logo" style="display:none;">VB</div>
                         </div>
                         <span class="payment-title">Virement Bancaire</span>
@@ -998,7 +902,7 @@
                     <!-- Ooredoo Card -->
                     <div class="payment-card">
                         <div class="logo-container">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/Ooredoo_logo.svg" alt="Ooredoo Card" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <img src="ooredoo-logo.webp" alt="Ooredoo Card" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="fallback-logo" style="display:none;">OR</div>
                         </div>
                         <span class="payment-title">Ooredoo Card</span>
@@ -1015,10 +919,10 @@
 
                 <div class="glass-card discount-card">
                     <h3 style="font-size: 16px; font-weight: 700;">Apply Promo Code</h3>
-                    <p style="color: var(--text-muted); font-size: 13px; margin-top: 4px;">Enter a valid code below (e.g. redanks or vexo).</p>
+                    <p style="color: var(--text-muted); font-size: 13px; margin-top: 4px;">Enter a valid code below (e.g. example).</p>
                     
                     <div class="discount-input-group">
-                        <input type="text" id="discountInput" class="discount-input" placeholder="e.g. redanks">
+                        <input type="text" id="discountInput" class="discount-input" placeholder="e.g. example">
                         <button class="btn btn-primary" style="width: auto; padding: 0 24px;" onclick="applyDiscountCode()">Redeem</button>
                     </div>
 
@@ -1122,8 +1026,7 @@
                 <!-- 800 V-Bucks -->
                 <div class="pricing-card">
                     <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
-                        <img src="https://cdn2.unrealengine.com/fortnite-800-v-bucks-ico-512x512-512x512-d816a7bf6e49.png" alt="800 V-Bucks" style="max-height: 100%; object-fit: contain;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="fallback-logo" style="display:none; width: 100%; height: 100%; font-size: 28px; border-radius: 0; background: transparent; border: none;">🪙</div>
+                        <img src="800-v-bucks.png" alt="800 V-Bucks" style="max-height: 100%; object-fit: contain;">
                     </div>
                     <div style="text-align: center; font-weight: 700; font-size: 16px;">800 V-Bucks</div>
                     <div class="price-box">
@@ -1142,8 +1045,7 @@
                 <!-- 2,400 V-Bucks -->
                 <div class="pricing-card">
                     <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
-                        <img src="https://cdn2.unrealengine.com/fortnite-2800-v-bucks-ico-512x512-512x512-9c16a7bf6e49.png" alt="2,400 V-Bucks" style="max-height: 100%; object-fit: contain;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="fallback-logo" style="display:none; width: 100%; height: 100%; font-size: 28px; border-radius: 0; background: transparent; border: none;">🪙</div>
+                        <img src="2400-v-buck.png" alt="2,400 V-Bucks" style="max-height: 100%; object-fit: contain;">
                     </div>
                     <div style="text-align: center; font-weight: 700; font-size: 16px;">2,400 V-Bucks</div>
                     <div class="price-box">
@@ -1162,8 +1064,7 @@
                 <!-- 4,500 V-Bucks -->
                 <div class="pricing-card">
                     <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
-                        <img src="https://cdn2.unrealengine.com/fortnite-5000-v-bucks-ico-512x512-512x512-4216a7bf6e49.png" alt="4,500 V-Bucks" style="max-height: 100%; object-fit: contain;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="fallback-logo" style="display:none; width: 100%; height: 100%; font-size: 28px; border-radius: 0; background: transparent; border: none;">🪙</div>
+                        <img src="4500-v-bucks.png" alt="4,500 V-Bucks" style="max-height: 100%; object-fit: contain;">
                     </div>
                     <div style="text-align: center; font-weight: 700; font-size: 16px;">4,500 V-Bucks</div>
                     <div class="price-box">
@@ -1182,8 +1083,7 @@
                 <!-- 12,500 V-Bucks -->
                 <div class="pricing-card">
                     <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
-                        <img src="https://cdn2.unrealengine.com/fortnite-13500-v-bucks-ico-512x512-512x512-8816a7bf6e49.png" alt="12,500 V-Bucks" style="max-height: 100%; object-fit: contain;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="fallback-logo" style="display:none; width: 100%; height: 100%; font-size: 28px; border-radius: 0; background: transparent; border: none;">🪙</div>
+                        <img src="12500-v-bucks.png" alt="12,500 V-Bucks" style="max-height: 100%; object-fit: contain;">
                     </div>
                     <div style="text-align: center; font-weight: 700; font-size: 16px;">12,500 V-Bucks</div>
                     <div class="price-box">
@@ -1202,8 +1102,7 @@
                 <!-- Fortnite Crew -->
                 <div class="pricing-card">
                     <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
-                        <img src="https://cdn2.unrealengine.com/fortnite-crew-pack-icon-512x512-512x512-1116a7bf6e49.png" alt="Fortnite Crew" style="max-height: 100%; object-fit: contain;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="fallback-logo" style="display:none; width: 100%; height: 100%; font-size: 28px; border-radius: 0; background: transparent; border: none;">👑</div>
+                        <img src="Fortnite-Crew-Subscription-Logo.png" alt="Fortnite Crew" style="max-height: 100%; object-fit: contain;">
                     </div>
                     <div style="text-align: center; font-weight: 700; font-size: 16px;">Fortnite Crew</div>
                     <div class="price-box">
@@ -1222,8 +1121,7 @@
                 <!-- Battle Pass -->
                 <div class="pricing-card">
                     <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
-                        <img src="https://cdn2.unrealengine.com/fortnite-battle-pass-icon-512x512-512x512-3316a7bf6e49.png" alt="Battle Pass" style="max-height: 100%; object-fit: contain;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="fallback-logo" style="display:none; width: 100%; height: 100%; font-size: 28px; border-radius: 0; background: transparent; border: none;">⭐</div>
+                        <img src="Battle_Pass_-_Icon_-_Fortnite.png" alt="Battle Pass" style="max-height: 100%; object-fit: contain;">
                     </div>
                     <div style="text-align: center; font-weight: 700; font-size: 16px;">Battle Pass</div>
                     <div class="price-box">
@@ -1368,7 +1266,7 @@
             document.getElementById('storeModal').classList.add('open');
         }
 
-        function openShopCheckout(productName) {
+        function openCheckout(productName) {
             selectedProduct = productName;
             document.getElementById('modalPricingView').style.display = 'none';
             document.getElementById('vbucksPricingView').style.display = 'none';
@@ -1381,8 +1279,6 @@
             if (authenticatedUser && authenticatedUser.username) {
                 document.getElementById('inputDiscord').value = authenticatedUser.username;
             }
-
-            document.getElementById('storeModal').classList.add('open');
         }
 
         function backToPricing() {
