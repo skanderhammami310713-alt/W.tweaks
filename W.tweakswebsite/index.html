@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>W.Tweaks | Premium Performance</title>
-    <meta name="description" content="Official website for W.Tweaks system performance and tools.">
+    <title>.Tweaks | Premium Performance</title>
+    <meta name="description" content="Official website for .Tweaks system performance and tools.">
     <meta name="google-site-verification" content="9JVDMTtOknv4_TYcl3yTYNh2T254dSzjB1bNI3OFN78" />
     
     <style>
@@ -50,19 +50,9 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 15px;
             z-index: 9999;
             animation: fadeOutOverlay 0.8s ease forwards 2.2s;
             pointer-events: none;
-        }
-
-        .welcome-logo-icon {
-            font-size: 80px;
-            font-weight: 900;
-            font-style: italic;
-            color: var(--accent-blue);
-            text-shadow: 0 0 30px var(--accent-glow);
-            animation: welcomeIntro 2.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
         .welcome-text {
@@ -126,18 +116,8 @@
         .brand-header {
             display: flex;
             align-items: center;
-            gap: 10px;
             margin-bottom: 35px;
             padding-left: 5px;
-        }
-
-        .brand-logo-icon {
-            font-size: 28px;
-            font-weight: 900;
-            font-style: italic;
-            color: var(--accent-blue);
-            text-shadow: 0 0 10px var(--accent-glow);
-            line-height: 1;
         }
 
         .brand-title {
@@ -686,7 +666,6 @@
 
     <!-- Welcome Animation Screen -->
     <div class="welcome-screen">
-        <div class="welcome-logo-icon">W</div>
         <h1 class="welcome-text">Welcome Back</h1>
     </div>
 
@@ -695,17 +674,16 @@
         <!-- Sidebar Navigation -->
         <div class="sidebar">
             <div class="brand-header">
-                <div class="brand-logo-icon">W</div>
-                <div class="brand-title">W.Tweaks</div>
+                <div class="brand-title">.Tweaks</div>
             </div>
             <div class="nav-list">
                 <div class="nav-item active" onclick="switchTab('account', this)">Account</div>
-                <div class="nav-item" onclick="switchTab('our-tweaks', this)">Our Tweaks</div>
-                <div class="nav-item" onclick="switchTab('macros', this)">Macros</div>
-                <div class="nav-item" onclick="switchTab('shop', this)">Shop</div>
-                <div class="nav-item" onclick="switchTab('payment-methods', this)">Payment Method</div>
-                <div class="nav-item" onclick="switchTab('discounts', this)">Discounts</div>
-                <div class="nav-item" onclick="switchTab('free-tweaks', this)">Free Tweaks</div>
+                <div class="nav-item" onclick="switchTab('our-tweaks', this)">Our Tweaks</div>[cite: 6]
+                <div class="nav-item" onclick="switchTab('macros', this)">Macros</div>[cite: 6]
+                <div class="nav-item" onclick="switchTab('shop', this)">Shop</div>[cite: 6]
+                <div class="nav-item" onclick="switchTab('payment-methods', this)">Payment Method</div>[cite: 6]
+                <div class="nav-item" onclick="switchTab('discounts', this)">Discounts</div>[cite: 6]
+                <div class="nav-item" onclick="switchTab('free-tweaks', this)">Free Tweaks</div>[cite: 6]
             </div>
         </div>
 
@@ -714,25 +692,25 @@
             <!-- ACCOUNT TAB -->
             <div class="tab-content active" id="tab-account">
                 <div class="header">
-                    <h1>Account Overview</h1>
-                    <p>Connect your Discord profile to view status and active licenses.</p>
+                    <h1>Account Overview</h1>[cite: 6]
+                    <p>Connect your Discord profile to view status and active licenses.</p>[cite: 6]
                 </div>
 
                 <div class="glass-card account-card">
-                    <h3 style="font-size: 16px; font-weight: 700;">Discord Identity</h3>
+                    <h3 style="font-size: 16px; font-weight: 700;">Discord Identity</h3>[cite: 6]
                     
                     <div class="profile-display">
-                        <img class="profile-avatar" id="avatarImg" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar">
+                        <img class="profile-avatar" id="avatarImg" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar">[cite: 6]
                         <div>
-                            <div class="profile-name" id="usernameText">Not Authenticated</div>
-                            <div class="profile-tag" id="statusText">Authorize via Discord to sync credentials</div>
+                            <div class="profile-name" id="usernameText">Not Authenticated</div>[cite: 6]
+                            <div class="profile-tag" id="statusText">Authorize via Discord to sync credentials</div>[cite: 6]
                         </div>
                     </div>
 
                     <button class="btn btn-discord" onclick="triggerDiscordAuth()">
                         <svg viewBox="0 0 127.14 96.36">
                             <path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22c2.68-27.12-5.76-50.8-18.9-72.15ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,45.92,53.87,53,48.8,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,45.92,96.1,53,91,65.69,84.69,65.69Z"/>
-                        </svg>
+                        </svg>[cite: 6]
                         Authenticate with Discord
                     </button>
                 </div>
@@ -741,31 +719,31 @@
             <!-- OUR TWEAKS TAB -->
             <div class="tab-content" id="tab-our-tweaks">
                 <div class="header">
-                    <h1>Performance Packages</h1>
-                    <p>Select a category below to explore optimization tiers.</p>
+                    <h1>Performance Packages</h1>[cite: 6]
+                    <p>Select a category below to explore optimization tiers.</p>[cite: 6]
                 </div>
 
                 <div id="tweaksDiscountBanner" class="discount-active-banner">
-                    <span>🔥 You Got 15% Off Active! Prices are updated.</span>
+                    <span>🔥 You Got 15% Off Active! Prices are updated.</span>[cite: 6]
                 </div>
 
                 <div class="tweaks-grid">
                     <div class="glass-card tweak-card" onclick="openStoreModal('Delay Reduction')">
-                        <h3>Delay Reduction</h3>
-                        <p>Eliminate system execution overhead and lower mouse/keyboard input lag.</p>
-                        <span class="click-hint">View Pricing Tiers →</span>
+                        <h3>Delay Reduction</h3>[cite: 6]
+                        <p>Eliminate system execution overhead and lower mouse/keyboard input lag.</p>[cite: 6]
+                        <span class="click-hint">View Pricing Tiers →</span>[cite: 6]
                     </div>
 
                     <div class="glass-card tweak-card" onclick="openStoreModal('Game Engine Optimization')">
-                        <h3>Game Engine Optimization</h3>
-                        <p>Maximize FPS stability, unpark CPU cores, and strip background process bloat.</p>
-                        <span class="click-hint">View Pricing Tiers →</span>
+                        <h3>Game Engine Optimization</h3>[cite: 6]
+                        <p>Maximize FPS stability, unpark CPU cores, and strip background process bloat.</p>[cite: 6]
+                        <span class="click-hint">View Pricing Tiers →</span>[cite: 6]
                     </div>
 
                     <div class="glass-card tweak-card" onclick="openStoreModal('Network & Ping Tweaks')">
-                        <h3>Network & Ping Tweaks</h3>
-                        <p>Optimize TCP/IP parameters and DNS routing to maintain minimal packet delay.</p>
-                        <span class="click-hint">View Pricing Tiers →</span>
+                        <h3>Network & Ping Tweaks</h3>[cite: 6]
+                        <p>Optimize TCP/IP parameters and DNS routing to maintain minimal packet delay.</p>[cite: 6]
+                        <span class="click-hint">View Pricing Tiers →</span>[cite: 6]
                     </div>
                 </div>
             </div>
@@ -773,81 +751,81 @@
             <!-- MACROS TAB -->
             <div class="tab-content" id="tab-macros">
                 <div class="header">
-                    <h1>Custom Macros</h1>
-                    <p>Select a macro tier to unlock specialized input automation.</p>
+                    <h1>Custom Macros</h1>[cite: 6]
+                    <p>Select a macro tier to unlock specialized input automation.</p>[cite: 6]
                 </div>
 
                 <div id="macrosDiscountBanner" class="discount-active-banner">
-                    <span>🔥 You Got 15% Off Active! Prices are updated.</span>
+                    <span>🔥 You Got 15% Off Active! Prices are updated.</span>[cite: 6]
                 </div>
 
                 <div class="pricing-container">
                     <!-- Economy -->
                     <div class="pricing-card">
-                        <div style="text-align: center; font-weight: 700; font-size: 18px;">Economy</div>
+                        <div style="text-align: center; font-weight: 700; font-size: 18px;">Economy</div>[cite: 6]
                         <div class="price-box">
                             <div class="main-price">
-                                <span class="price-original" data-orig="10 DT">10 DT</span>
+                                <span class="price-original" data-orig="10 dt">10 dt</span>
                                 <span class="price-discounted" style="display:none;"></span>
                             </div>
                             <div class="sub-prices">
-                                <span class="sub-original" data-orig="$5 • 6 €">$5 • 6 €</span>
+                                <span class="sub-original" data-orig="3 $ - 4 €">3 $ - 4 €</span>
                                 <span class="sub-discounted" style="display:none;"></span>
                             </div>
                         </div>
                         <ul class="features-list">
-                            <li>Drag Macro</li>
-                            <li>HDK</li>
-                            <li>Instant Build</li>
-                            <li>Auto Reset</li>
+                            <li>Drag Macro</li>[cite: 6]
+                            <li>HDK</li>[cite: 6]
+                            <li>Instant Build</li>[cite: 6]
+                            <li>Auto Reset</li>[cite: 6]
                         </ul>
-                        <button class="btn btn-primary" onclick="openMacroModal('Economy Macro')">Get Started</button>
+                        <button class="btn btn-primary" onclick="openMacroModal('Economy Macro')">Get Started</button>[cite: 6]
                     </div>
 
                     <!-- Middle Class -->
                     <div class="pricing-card popular">
-                        <div class="badge">POPULAR</div>
-                        <div style="text-align: center; font-weight: 700; font-size: 18px;">Middle Class</div>
+                        <div class="badge">POPULAR</div>[cite: 6]
+                        <div style="text-align: center; font-weight: 700; font-size: 18px;">Middle Class</div>[cite: 6]
                         <div class="price-box">
                             <div class="main-price">
-                                <span class="price-original" data-orig="60 DT">60 DT</span>
-                                <span class="price-discounted" style="display:none;"></span>
+                                <span class="price-original" data-orig="60 DT">60 DT</span>[cite: 6]
+                                <span class="price-discounted" style="display:none;"></span>[cite: 6]
                             </div>
                             <div class="sub-prices">
-                                <span class="sub-original" data-orig="$20 • 15 €">$20 • 15 €</span>
-                                <span class="sub-discounted" style="display:none;"></span>
+                                <span class="sub-original" data-orig="$20 • 15 €">$20 • 15 €</span>[cite: 6]
+                                <span class="sub-discounted" style="display:none;"></span>[cite: 6]
                             </div>
                         </div>
                         <ul class="features-list">
-                            <li>Drag Macro</li>
-                            <li>Instant Build</li>
-                            <li>Auto Reset</li>
-                            <li>Secure from Anticheat</li>
+                            <li>Drag Macro</li>[cite: 6]
+                            <li>Instant Build</li>[cite: 6]
+                            <li>Auto Reset</li>[cite: 6]
+                            <li>Secure from Anticheat</li>[cite: 6]
                         </ul>
-                        <button class="btn btn-primary" onclick="openMacroModal('Middle Class Macro')">Get Started</button>
+                        <button class="btn btn-primary" onclick="openMacroModal('Middle Class Macro')">Get Started</button>[cite: 6]
                     </div>
 
                     <!-- Deluxe -->
                     <div class="pricing-card">
-                        <div style="text-align: center; font-weight: 700; font-size: 18px;">Deluxe</div>
+                        <div style="text-align: center; font-weight: 700; font-size: 18px;">Deluxe</div>[cite: 6]
                         <div class="price-box">
                             <div class="main-price">
-                                <span class="price-original" data-orig="130 DT">130 DT</span>
-                                <span class="price-discounted" style="display:none;"></span>
+                                <span class="price-original" data-orig="130 DT">130 DT</span>[cite: 6]
+                                <span class="price-discounted" style="display:none;"></span>[cite: 6]
                             </div>
                             <div class="sub-prices">
-                                <span class="sub-original" data-orig="$40 • 30 €">$40 • 30 €</span>
-                                <span class="sub-discounted" style="display:none;"></span>
+                                <span class="sub-original" data-orig="$40 • 30 €">$40 • 30 €</span>[cite: 6]
+                                <span class="sub-discounted" style="display:none;"></span>[cite: 6]
                             </div>
                         </div>
                         <ul class="features-list">
-                            <li>Drag Macro</li>
-                            <li>Instant Build</li>
-                            <li>Auto Reset</li>
-                            <li>Prefire</li>
-                            <li>99.9% Secure from Anticheat</li>
+                            <li>Drag Macro</li>[cite: 6]
+                            <li>Instant Build</li>[cite: 6]
+                            <li>Auto Reset</li>[cite: 6]
+                            <li>Prefire</li>[cite: 6]
+                            <li>99.9% Secure from Anticheat</li>[cite: 6]
                         </ul>
-                        <button class="btn btn-primary" onclick="openMacroModal('Deluxe Macro')">Get Started</button>
+                        <button class="btn btn-primary" onclick="openMacroModal('Deluxe Macro')">Get Started</button>[cite: 6]
                     </div>
                 </div>
             </div>
@@ -855,20 +833,20 @@
             <!-- SHOP TAB -->
             <div class="tab-content" id="tab-shop">
                 <div class="header">
-                    <h1>Shop</h1>
-                    <p>Explore games and customized performance add-ons.</p>
+                    <h1>Shop</h1>[cite: 6]
+                    <p>Explore games and customized performance add-ons.</p>[cite: 6]
                 </div>
 
                 <div class="tweaks-grid">
                     <!-- Fortnite Square Card -->
                     <div class="glass-card tweak-card" style="display: flex; flex-direction: column; align-items: center; text-align: center; max-width: 240px;" onclick="openStoreModal('Fortnite')">
                         <div style="width: 140px; height: 140px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.3); border-radius: 12px; border: 1px solid var(--border-color); overflow: hidden;">
-                            <img src="fortnite-logo.webp" alt="Fortnite" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="fallback-logo" style="display:none; width: 100%; height: 100%; font-size: 48px; border-radius: 0; background: transparent; border: none; font-weight: 900; color: #fff;">F</div>
+                            <img src="fortnite-logo.webp" alt="Fortnite" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">[cite: 6]
+                            <div class="fallback-logo" style="display:none; width: 100%; height: 100%; font-size: 48px; border-radius: 0; background: transparent; border: none; font-weight: 900; color: #fff;">F</div>[cite: 6]
                         </div>
-                        <h3 style="color: var(--text-main); font-size: 18px; font-weight: 700; margin-bottom: 4px;">Fortnite</h3>
-                        <p style="color: var(--text-muted); font-size: 13px;">View optimization tiers.</p>
-                        <span class="click-hint">Click to Open →</span>
+                        <h3 style="color: var(--text-main); font-size: 18px; font-weight: 700; margin-bottom: 4px;">Fortnite</h3>[cite: 6]
+                        <p style="color: var(--text-muted); font-size: 13px;">View optimization tiers.</p>[cite: 6]
+                        <span class="click-hint">Click to Open →</span>[cite: 6]
                     </div>
                 </div>
             </div>
@@ -876,36 +854,36 @@
             <!-- PAYMENT METHOD TAB -->
             <div class="tab-content" id="tab-payment-methods">
                 <div class="header">
-                    <h1>Payment Channels</h1>
-                    <p>Available secure payment methods for your checkouts.</p>
+                    <h1>Payment Channels</h1>[cite: 6]
+                    <p>Available secure payment methods for your checkouts.</p>[cite: 6]
                 </div>
 
                 <div class="payment-methods-grid">
                     <!-- Izi Zitouna Payment -->
                     <div class="payment-card">
                         <div class="logo-container">
-                            <img src="izi-zitouna-logo.png" alt="Izi Zitouna Payment" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="fallback-logo" style="display:none;">IZ</div>
+                            <img src="izi-zitouna-logo.png" alt="Izi Zitouna Payment" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">[cite: 6]
+                            <div class="fallback-logo" style="display:none;">IZ</div>[cite: 6]
                         </div>
-                        <span class="payment-title">Izi Zitouna Payment</span>
+                        <span class="payment-title">Izi Zitouna Payment</span>[cite: 6]
                     </div>
 
                     <!-- Virement Bancaire -->
                     <div class="payment-card">
                         <div class="logo-container">
-                            <img src="bank-logo.webp" alt="Virement Bancaire" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="fallback-logo" style="display:none;">VB</div>
+                            <img src="bank-logo.webp" alt="Virement Bancaire" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">[cite: 6]
+                            <div class="fallback-logo" style="display:none;">VB</div>[cite: 6]
                         </div>
-                        <span class="payment-title">Virement Bancaire</span>
+                        <span class="payment-title">Virement Bancaire</span>[cite: 6]
                     </div>
 
                     <!-- Ooredoo Card -->
                     <div class="payment-card">
                         <div class="logo-container">
-                            <img src="ooredoo-logo.webp" alt="Ooredoo Card" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="fallback-logo" style="display:none;">OR</div>
+                            <img src="ooredoo-logo.webp" alt="Ooredoo Card" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">[cite: 6]
+                            <div class="fallback-logo" style="display:none;">OR</div>[cite: 6]
                         </div>
-                        <span class="payment-title">Ooredoo Card</span>
+                        <span class="payment-title">Ooredoo Card</span>[cite: 6]
                     </div>
                 </div>
             </div>
@@ -913,30 +891,30 @@
             <!-- DISCOUNTS TAB -->
             <div class="tab-content" id="tab-discounts">
                 <div class="header">
-                    <h1>Active Promotions</h1>
-                    <p>Redeem coupon codes to apply a 15% discount across store checkouts.</p>
+                    <h1>Active Promotions</h1>[cite: 6]
+                    <p>Redeem coupon codes to apply a 15% discount across store checkouts.</p>[cite: 6]
                 </div>
 
                 <div class="glass-card discount-card">
-                    <h3 style="font-size: 16px; font-weight: 700;">Apply Promo Code</h3>
-                    <p style="color: var(--text-muted); font-size: 13px; margin-top: 4px;">Enter a valid code below (e.g. example).</p>
+                    <h3 style="font-size: 16px; font-weight: 700;">Apply Promo Code</h3>[cite: 6]
+                    <p style="color: var(--text-muted); font-size: 13px; margin-top: 4px;">Enter a valid code below (e.g. example).</p>[cite: 6]
                     
                     <div class="discount-input-group">
-                        <input type="text" id="discountInput" class="discount-input" placeholder="e.g. example">
-                        <button class="btn btn-primary" style="width: auto; padding: 0 24px;" onclick="applyDiscountCode()">Redeem</button>
+                        <input type="text" id="discountInput" class="discount-input" placeholder="e.g. example">[cite: 6]
+                        <button class="btn btn-primary" style="width: auto; padding: 0 24px;" onclick="applyDiscountCode()">Redeem</button>[cite: 6]
                     </div>
 
-                    <div id="discountStatus" class="discount-status"></div>
+                    <div id="discountStatus" class="discount-status"></div>[cite: 6]
                 </div>
             </div>
 
             <!-- FREE TWEAKS TAB -->
             <div class="tab-content" id="tab-free-tweaks">
-                <div class="header"><h1>Community Rewards</h1></div>
+                <div class="header"><h1>Community Rewards</h1></div>[cite: 6]
                 <div class="glass-card">
-                    <h3 style="color: var(--accent-blue); margin-bottom: 10px;">Discord Community Giveaways</h3>
-                    <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 20px;">Join our official server to claim free optimization utilities and participate in weekly giveaways.</p>
-                    <a href="https://discord.gg/Xg3qM57Db" target="_blank" class="btn btn-primary" style="text-decoration: none; max-width: 220px;">Join Discord Community</a>
+                    <h3 style="color: var(--accent-blue); margin-bottom: 10px;">Discord Community Giveaways</h3>[cite: 6]
+                    <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 20px;">Join our official server to claim free optimization utilities and participate in weekly giveaways.</p>[cite: 6]
+                    <a href="https://discord.gg/Xg3qM57Db" target="_blank" class="btn btn-primary" style="text-decoration: none; max-width: 220px;">Join Discord Community</a>[cite: 6]
                 </div>
             </div>
         </div>
@@ -945,79 +923,79 @@
     <!-- Store Modal for Tweaks / V-Bucks / Checkout Form -->
     <div class="modal-overlay" id="storeModal" onclick="closeModal(event)">
         <div class="modal-content">
-            <button class="close-btn" onclick="closeModalDirect()">&times;</button>
+            <button class="close-btn" onclick="closeModalDirect()">&times;</button>[cite: 6]
             <div style="text-align: center;">
-                <h1 style="font-size: 28px; font-weight: 800;">W.Tweaks <span style="color: var(--accent-blue);">Store</span></h1>
-                <p id="modalSubtitle" style="color: var(--text-muted); font-size: 14px; margin-top: 4px;">Choose your plan to unlock maximum performance.</p>
+                <h1 style="font-size: 28px; font-weight: 800;">.Tweaks <span style="color: var(--accent-blue);">Store</span></h1>[cite: 6]
+                <p id="modalSubtitle" style="color: var(--text-muted); font-size: 14px; margin-top: 4px;">Choose your plan to unlock maximum performance.</p>[cite: 6]
             </div>
 
             <div id="modalDiscountBanner" class="discount-active-banner" style="margin-top: 20px;">
-                <span>🔥 You Got 15% Off Active! Prices are updated.</span>
+                <span>🔥 You Got 15% Off Active! Prices are updated.</span>[cite: 6]
             </div>
 
             <!-- Standard Pricing Selection View -->
             <div id="modalPricingView" class="pricing-container">
                 <div class="pricing-card">
-                    <div style="text-align: center; font-weight: 700; font-size: 18px;">Economy</div>
+                    <div style="text-align: center; font-weight: 700; font-size: 18px;">Economy</div>[cite: 6]
                     <div class="price-box">
                         <div class="main-price">
-                            <span class="price-original" data-orig="45 DT">45 DT</span>
-                            <span class="price-discounted" style="display:none;"></span>
+                            <span class="price-original" data-orig="45 DT">45 DT</span>[cite: 6]
+                            <span class="price-discounted" style="display:none;"></span>[cite: 6]
                         </div>
                         <div class="sub-prices">
-                            <span class="sub-original" data-orig="$15 • 10 €">$15 • 10 €</span>
-                            <span class="sub-discounted" style="display:none;"></span>
+                            <span class="sub-original" data-orig="$15 • 10 €">$15 • 10 €</span>[cite: 6]
+                            <span class="sub-discounted" style="display:none;"></span>[cite: 6]
                         </div>
                     </div>
                     <ul class="features-list">
-                        <li>Basic CPU Optimization</li>
-                        <li>Timer Resolution Setup</li>
-                        <li>Standard Cleanup Script</li>
+                        <li>Basic CPU Optimization</li>[cite: 6]
+                        <li>Timer Resolution Setup</li>[cite: 6]
+                        <li>Standard Cleanup Script</li>[cite: 6]
                     </ul>
-                    <button class="btn btn-primary" onclick="openCheckout('Economy Tweak')">Get Started</button>
+                    <button class="btn btn-primary" onclick="openCheckout('Economy Tweak')">Get Started</button>[cite: 6]
                 </div>
 
                 <div class="pricing-card popular">
-                    <div class="badge">POPULAR</div>
-                    <div style="text-align: center; font-weight: 700; font-size: 18px;">Middle Class</div>
+                    <div class="badge">POPULAR</div>[cite: 6]
+                    <div style="text-align: center; font-weight: 700; font-size: 18px;">Middle Class</div>[cite: 6]
                     <div class="price-box">
                         <div class="main-price">
-                            <span class="price-original" data-orig="55 DT">55 DT</span>
-                            <span class="price-discounted" style="display:none;"></span>
+                            <span class="price-original" data-orig="55 DT">55 DT</span>[cite: 6]
+                            <span class="price-discounted" style="display:none;"></span>[cite: 6]
                         </div>
                         <div class="sub-prices">
-                            <span class="sub-original" data-orig="$20 • 15 €">$20 • 15 €</span>
-                            <span class="sub-discounted" style="display:none;"></span>
+                            <span class="sub-original" data-orig="$20 • 15 €">$20 • 15 €</span>[cite: 6]
+                            <span class="sub-discounted" style="display:none;"></span>[cite: 6]
                         </div>
                     </div>
                     <ul class="features-list">
-                        <li>Everything in Economy</li>
-                        <li>GPU Low-Latency Tweaks</li>
-                        <li>Network Optimization</li>
-                        <li>Priority Support</li>
+                        <li>Everything in Economy</li>[cite: 6]
+                        <li>GPU Low-Latency Tweaks</li>[cite: 6]
+                        <li>Network Optimization</li>[cite: 6]
+                        <li>Priority Support</li>[cite: 6]
                     </ul>
-                    <button class="btn btn-primary" onclick="openCheckout('Middle Class Tweak')">Get Started</button>
+                    <button class="btn btn-primary" onclick="openCheckout('Middle Class Tweak')">Get Started</button>[cite: 6]
                 </div>
 
                 <div class="pricing-card">
-                    <div style="text-align: center; font-weight: 700; font-size: 18px;">Deluxe</div>
+                    <div style="text-align: center; font-weight: 700; font-size: 18px;">Deluxe</div>[cite: 6]
                     <div class="price-box">
                         <div class="main-price">
-                            <span class="price-original" data-orig="120 DT">120 DT</span>
-                            <span class="price-discounted" style="display:none;"></span>
+                            <span class="price-original" data-orig="120 DT">120 DT</span>[cite: 6]
+                            <span class="price-discounted" style="display:none;"></span>[cite: 6]
                         </div>
                         <div class="sub-prices">
-                            <span class="sub-original" data-orig="$40 • 35 €">$40 • 35 €</span>
-                            <span class="sub-discounted" style="display:none;"></span>
+                            <span class="sub-original" data-orig="$40 • 35 €">$40 • 35 €</span>[cite: 6]
+                            <span class="sub-discounted" style="display:none;"></span>[cite: 6]
                         </div>
                     </div>
                     <ul class="features-list">
-                        <li>Full System Overhaul</li>
-                        <li>Custom Driver Profiles</li>
-                        <li>Exclusive Latency Scripts</li>
-                        <li>1-on-1 Remote Support</li>
+                        <li>Full System Overhaul</li>[cite: 6]
+                        <li>Custom Driver Profiles</li>[cite: 6]
+                        <li>Exclusive Latency Scripts</li>[cite: 6]
+                        <li>1-on-1 Remote Support</li>[cite: 6]
                     </ul>
-                    <button class="btn btn-primary" onclick="openCheckout('Deluxe Tweak')">Get Started</button>
+                    <button class="btn btn-primary" onclick="openCheckout('Deluxe Tweak')">Get Started</button>[cite: 6]
                 </div>
             </div>
 
@@ -1026,217 +1004,217 @@
                 <!-- 800 V-Bucks -->
                 <div class="pricing-card">
                     <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
-                        <img src="800-v-bucks.png" alt="800 V-Bucks" style="max-height: 100%; object-fit: contain;">
+                        <img src="800-v-bucks.png" alt="800 V-Bucks" style="max-height: 100%; object-fit: contain;">[cite: 6]
                     </div>
-                    <div style="text-align: center; font-weight: 700; font-size: 16px;">800 V-Bucks</div>
+                    <div style="text-align: center; font-weight: 700; font-size: 16px;">800 V-Bucks</div>[cite: 6]
                     <div class="price-box">
                         <div class="main-price">
-                            <span class="price-original" data-orig="39 DT">39 DT</span>
-                            <span class="price-discounted" style="display:none;"></span>
+                            <span class="price-original" data-orig="39 DT">39 DT</span>[cite: 6]
+                            <span class="price-discounted" style="display:none;"></span>[cite: 6]
                         </div>
                         <div class="sub-prices">
-                            <span class="sub-original" data-orig="$19.99 • 14.99 €">$19.99 • 14.99 €</span>
-                            <span class="sub-discounted" style="display:none;"></span>
+                            <span class="sub-original" data-orig="$19.99 • 14.99 €">$19.99 • 14.99 €</span>[cite: 6]
+                            <span class="sub-discounted" style="display:none;"></span>[cite: 6]
                         </div>
                     </div>
-                    <button class="btn btn-primary" onclick="openCheckout('800 V-Bucks')">Get Started</button>
+                    <button class="btn btn-primary" onclick="openCheckout('800 V-Bucks')">Get Started</button>[cite: 6]
                 </div>
 
                 <!-- 2,400 V-Bucks -->
                 <div class="pricing-card">
                     <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
-                        <img src="2400-v-buck.png" alt="2,400 V-Bucks" style="max-height: 100%; object-fit: contain;">
+                        <img src="2400-v-buck.png" alt="2,400 V-Bucks" style="max-height: 100%; object-fit: contain;">[cite: 6]
                     </div>
-                    <div style="text-align: center; font-weight: 700; font-size: 16px;">2,400 V-Bucks</div>
+                    <div style="text-align: center; font-weight: 700; font-size: 16px;">2,400 V-Bucks</div>[cite: 6]
                     <div class="price-box">
                         <div class="main-price">
-                            <span class="price-original" data-orig="77 DT">77 DT</span>
-                            <span class="price-discounted" style="display:none;"></span>
+                            <span class="price-original" data-orig="77 DT">77 DT</span>[cite: 6]
+                            <span class="price-discounted" style="display:none;"></span>[cite: 6]
                         </div>
                         <div class="sub-prices">
-                            <span class="sub-original" data-orig="$29.99 • 25.99 €">$29.99 • 25.99 €</span>
-                            <span class="sub-discounted" style="display:none;"></span>
+                            <span class="sub-original" data-orig="$29.99 • 25.99 €">$29.99 • 25.99 €</span>[cite: 6]
+                            <span class="sub-discounted" style="display:none;"></span>[cite: 6]
                         </div>
                     </div>
-                    <button class="btn btn-primary" onclick="openCheckout('2,400 V-Bucks')">Get Started</button>
+                    <button class="btn btn-primary" onclick="openCheckout('2,400 V-Bucks')">Get Started</button>[cite: 6]
                 </div>
 
                 <!-- 4,500 V-Bucks -->
                 <div class="pricing-card">
                     <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
-                        <img src="4500-v-bucks.png" alt="4,500 V-Bucks" style="max-height: 100%; object-fit: contain;">
+                        <img src="4500-v-bucks.png" alt="4,500 V-Bucks" style="max-height: 100%; object-fit: contain;">[cite: 6]
                     </div>
-                    <div style="text-align: center; font-weight: 700; font-size: 16px;">4,500 V-Bucks</div>
+                    <div style="text-align: center; font-weight: 700; font-size: 16px;">4,500 V-Bucks</div>[cite: 6]
                     <div class="price-box">
                         <div class="main-price">
-                            <span class="price-original" data-orig="120 DT">120 DT</span>
-                            <span class="price-discounted" style="display:none;"></span>
+                            <span class="price-original" data-orig="120 DT">120 DT</span>[cite: 6]
+                            <span class="price-discounted" style="display:none;"></span>[cite: 6]
                         </div>
                         <div class="sub-prices">
-                            <span class="sub-original" data-orig="$45.99 • 40.99 €">$45.99 • 40.99 €</span>
-                            <span class="sub-discounted" style="display:none;"></span>
+                            <span class="sub-original" data-orig="$45.99 • 40.99 €">$45.99 • 40.99 €</span>[cite: 6]
+                            <span class="sub-discounted" style="display:none;"></span>[cite: 6]
                         </div>
                     </div>
-                    <button class="btn btn-primary" onclick="openCheckout('4,500 V-Bucks')">Get Started</button>
+                    <button class="btn btn-primary" onclick="openCheckout('4,500 V-Bucks')">Get Started</button>[cite: 6]
                 </div>
 
                 <!-- 12,500 V-Bucks -->
                 <div class="pricing-card">
                     <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
-                        <img src="12500-v-bucks.png" alt="12,500 V-Bucks" style="max-height: 100%; object-fit: contain;">
+                        <img src="12500-v-bucks.png" alt="12,500 V-Bucks" style="max-height: 100%; object-fit: contain;">[cite: 6]
                     </div>
-                    <div style="text-align: center; font-weight: 700; font-size: 16px;">12,500 V-Bucks</div>
+                    <div style="text-align: center; font-weight: 700; font-size: 16px;">12,500 V-Bucks</div>[cite: 6]
                     <div class="price-box">
                         <div class="main-price">
-                            <span class="price-original" data-orig="275 DT">275 DT</span>
-                            <span class="price-discounted" style="display:none;"></span>
+                            <span class="price-original" data-orig="275 DT">275 DT</span>[cite: 6]
+                            <span class="price-discounted" style="display:none;"></span>[cite: 6]
                         </div>
                         <div class="sub-prices">
-                            <span class="sub-original" data-orig="$99.99 • 87.99 €">$99.99 • 87.99 €</span>
-                            <span class="sub-discounted" style="display:none;"></span>
+                            <span class="sub-original" data-orig="$99.99 • 87.99 €">$99.99 • 87.99 €</span>[cite: 6]
+                            <span class="sub-discounted" style="display:none;"></span>[cite: 6]
                         </div>
                     </div>
-                    <button class="btn btn-primary" onclick="openCheckout('12,500 V-Bucks')">Get Started</button>
+                    <button class="btn btn-primary" onclick="openCheckout('12,500 V-Bucks')">Get Started</button>[cite: 6]
                 </div>
 
                 <!-- Fortnite Crew -->
                 <div class="pricing-card">
                     <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
-                        <img src="Fortnite-Crew-Subscription-Logo.png" alt="Fortnite Crew" style="max-height: 100%; object-fit: contain;">
+                        <img src="Fortnite-Crew-Subscription-Logo.png" alt="Fortnite Crew" style="max-height: 100%; object-fit: contain;">[cite: 6]
                     </div>
-                    <div style="text-align: center; font-weight: 700; font-size: 16px;">Fortnite Crew</div>
+                    <div style="text-align: center; font-weight: 700; font-size: 16px;">Fortnite Crew</div>[cite: 6]
                     <div class="price-box">
                         <div class="main-price">
-                            <span class="price-original" data-orig="45 DT">45 DT</span>
-                            <span class="price-discounted" style="display:none;"></span>
+                            <span class="price-original" data-orig="45 DT">45 DT</span>[cite: 6]
+                            <span class="price-discounted" style="display:none;"></span>[cite: 6]
                         </div>
                         <div class="sub-prices">
-                            <span class="sub-original" data-orig="$25.99 • 19.99 €">$25.99 • 19.99 €</span>
-                            <span class="sub-discounted" style="display:none;"></span>
+                            <span class="sub-original" data-orig="$25.99 • 19.99 €">$25.99 • 19.99 €</span>[cite: 6]
+                            <span class="sub-discounted" style="display:none;"></span>[cite: 6]
                         </div>
                     </div>
-                    <button class="btn btn-primary" onclick="openCheckout('Fortnite Crew')">Get Started</button>
+                    <button class="btn btn-primary" onclick="openCheckout('Fortnite Crew')">Get Started</button>[cite: 6]
                 </div>
 
                 <!-- Battle Pass -->
                 <div class="pricing-card">
                     <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
-                        <img src="Battle_Pass_-_Icon_-_Fortnite.png" alt="Battle Pass" style="max-height: 100%; object-fit: contain;">
+                        <img src="Battle_Pass_-_Icon_-_Fortnite.png" alt="Battle Pass" style="max-height: 100%; object-fit: contain;">[cite: 6]
                     </div>
-                    <div style="text-align: center; font-weight: 700; font-size: 16px;">Battle Pass</div>
+                    <div style="text-align: center; font-weight: 700; font-size: 16px;">Battle Pass</div>[cite: 6]
                     <div class="price-box">
                         <div class="main-price">
-                            <span class="price-original" data-orig="39 DT">39 DT</span>
-                            <span class="price-discounted" style="display:none;"></span>
+                            <span class="price-original" data-orig="39 DT">39 DT</span>[cite: 6]
+                            <span class="price-discounted" style="display:none;"></span>[cite: 6]
                         </div>
                         <div class="sub-prices">
-                            <span class="sub-original" data-orig="$19.99 • 14.99 €">$19.99 • 14.99 €</span>
-                            <span class="sub-discounted" style="display:none;"></span>
+                            <span class="sub-original" data-orig="$19.99 • 14.99 €">$19.99 • 14.99 €</span>[cite: 6]
+                            <span class="sub-discounted" style="display:none;"></span>[cite: 6]
                         </div>
                     </div>
-                    <button class="btn btn-primary" onclick="openCheckout('Battle Pass')">Get Started</button>
+                    <button class="btn btn-primary" onclick="openCheckout('Battle Pass')">Get Started</button>[cite: 6]
                 </div>
             </div>
 
             <!-- Checkout User Details Form View -->
             <div id="checkoutFormView" class="checkout-form-container">
-                <div id="selectedItemDisplay" class="selected-item-display">Selected Item: None</div>
+                <div id="selectedItemDisplay" class="selected-item-display">Selected Item: None</div>[cite: 6]
                 
                 <div class="form-group">
-                    <label>Discord User Name</label>
-                    <input type="text" id="inputDiscord" class="form-input" placeholder="e.g. username#0000">
+                    <label>Discord User Name</label>[cite: 6]
+                    <input type="text" id="inputDiscord" class="form-input" placeholder="e.g. username#0000">[cite: 6]
                 </div>
 
                 <div class="form-group">
-                    <label>Name (IRL)</label>
-                    <input type="text" id="inputIrlName" class="form-input" placeholder="e.g. John Doe">
+                    <label>Name (IRL)</label>[cite: 6]
+                    <input type="text" id="inputIrlName" class="form-input" placeholder="e.g. John Doe">[cite: 6]
                 </div>
 
                 <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" id="inputEmail" class="form-input" placeholder="e.g. name@example.com">
+                    <label>Email</label>[cite: 6]
+                    <input type="email" id="inputEmail" class="form-input" placeholder="e.g. name@example.com">[cite: 6]
                 </div>
 
                 <div class="form-group">
-                    <label>Payment Method</label>
+                    <label>Payment Method</label>[cite: 6]
                     <select id="inputPaymentMethod" class="form-select">
-                        <option value="">-- Select Payment Method --</option>
-                        <option value="Izi Zitouna Payment">Izi Zitouna Payment</option>
-                        <option value="Virement Bancaire">Virement Bancaire</option>
-                        <option value="Ooredoo Card">Ooredoo Card</option>
+                        <option value="">-- Select Payment Method --</option>[cite: 6]
+                        <option value="Izi Zitouna Payment">Izi Zitouna Payment</option>[cite: 6]
+                        <option value="Virement Bancaire">Virement Bancaire</option>[cite: 6]
+                        <option value="Ooredoo Card">Ooredoo Card</option>[cite: 6]
                     </select>
                 </div>
 
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
-                    <button class="btn btn-discord" style="width: auto; padding: 10px 20px; margin: 0;" onclick="backToPricing()">← Back</button>
-                    <button class="btn btn-primary" style="width: auto; padding: 10px 24px;" onclick="submitCheckoutNext()">Next →</button>
+                    <button class="btn btn-discord" style="width: auto; padding: 10px 20px; margin: 0;" onclick="backToPricing()">← Back</button>[cite: 6]
+                    <button class="btn btn-primary" style="width: auto; padding: 10px 24px;" onclick="submitCheckoutNext()">Next →</button>[cite: 6]
                 </div>
             </div>
 
             <!-- Success Message Box -->
             <div id="successMessageBox" class="success-message-box">
                 The support team will contact you as soon as possible on the discord platform or in a email
-            </div>
+            </div>[cite: 6]
         </div>
     </div>
 
     <!-- Macro Checkout Modal -->
     <div class="modal-overlay" id="macroModal" onclick="closeMacroModal(event)">
         <div class="modal-content">
-            <button class="close-btn" onclick="closeMacroModalDirect()">&times;</button>
+            <button class="close-btn" onclick="closeMacroModalDirect()">&times;</button>[cite: 6]
             <div style="text-align: center;">
-                <h1 style="font-size: 28px; font-weight: 800;">W.Tweaks <span style="color: var(--accent-blue);">Macro Checkout</span></h1>
-                <p id="macroModalSubtitle" style="color: var(--text-muted); font-size: 14px; margin-top: 4px;">Complete your contact details below.</p>
+                <h1 style="font-size: 28px; font-weight: 800;">.Tweaks <span style="color: var(--accent-blue);">Macro Checkout</span></h1>[cite: 6]
+                <p id="macroModalSubtitle" style="color: var(--text-muted); font-size: 14px; margin-top: 4px;">Complete your contact details below.</p>[cite: 6]
             </div>
 
             <!-- Macro Checkout User Details Form View -->
             <div id="macroCheckoutFormView" class="checkout-form-container active" style="margin-top: 25px;">
-                <div id="macroSelectedItemDisplay" class="selected-item-display">Selected Item: None</div>
+                <div id="macroSelectedItemDisplay" class="selected-item-display">Selected Item: None</div>[cite: 6]
                 
                 <div class="form-group">
-                    <label>Discord User Name</label>
-                    <input type="text" id="macroInputDiscord" class="form-input" placeholder="e.g. username#0000">
+                    <label>Discord User Name</label>[cite: 6]
+                    <input type="text" id="macroInputDiscord" class="form-input" placeholder="e.g. username#0000">[cite: 6]
                 </div>
 
                 <div class="form-group">
-                    <label>Name (IRL)</label>
-                    <input type="text" id="macroInputIrlName" class="form-input" placeholder="e.g. John Doe">
+                    <label>Name (IRL)</label>[cite: 6]
+                    <input type="text" id="macroInputIrlName" class="form-input" placeholder="e.g. John Doe">[cite: 6]
                 </div>
 
                 <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" id="macroInputEmail" class="form-input" placeholder="e.g. name@example.com">
+                    <label>Email</label>[cite: 6]
+                    <input type="email" id="macroInputEmail" class="form-input" placeholder="e.g. name@example.com">[cite: 6]
                 </div>
 
                 <div class="form-group">
-                    <label>Payment Method</label>
+                    <label>Payment Method</label>[cite: 6]
                     <select id="macroInputPaymentMethod" class="form-select">
-                        <option value="">-- Select Payment Method --</option>
-                        <option value="Izi Zitouna Payment">Izi Zitouna Payment</option>
-                        <option value="Virement Bancaire">Virement Bancaire</option>
-                        <option value="Ooredoo Card">Ooredoo Card</option>
+                        <option value="">-- Select Payment Method --</option>[cite: 6]
+                        <option value="Izi Zitouna Payment">Izi Zitouna Payment</option>[cite: 6]
+                        <option value="Virement Bancaire">Virement Bancaire</option>[cite: 6]
+                        <option value="Ooredoo Card">Ooredoo Card</option>[cite: 6]
                     </select>
                 </div>
 
                 <div style="display: flex; justify-content: flex-end; align-items: center; margin-top: 10px;">
-                    <button class="btn btn-primary" style="width: auto; padding: 10px 24px;" onclick="submitMacroCheckoutNext()">Next →</button>
+                    <button class="btn btn-primary" style="width: auto; padding: 10px 24px;" onclick="submitMacroCheckoutNext()">Next →</button>[cite: 6]
                 </div>
             </div>
 
             <!-- Macro Success Message Box -->
             <div id="macroSuccessMessageBox" class="success-message-box">
                 The support team will contact you as soon as possible on the discord platform or in a email
-            </div>
+            </div>[cite: 6]
         </div>
     </div>
 
     <script>
-        const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1539347836037238806/0UOr9pDrvSCClqkA0sgJnl69VtUe1JRx7SqVSPX5yav-Suf_lyy4epxSXi9l_9U88Q0C';
+        const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1539347836037238806/0UOr9pDrvSCClqkA0sgJnl69VtUe1JRx7SqVSPX5yav-Suf_lyy4epxSXi9l_9U88Q0C';[cite: 6]
 
-        let discountActive = false;
-        let appliedDiscountName = '';
-        let selectedProduct = '';
-        let authenticatedUser = null;
+        let discountActive = false;[cite: 6]
+        let appliedDiscountName = '';[cite: 6]
+        let selectedProduct = '';[cite: 6]
+        let authenticatedUser = null;[cite: 6]
 
         function switchTab(tabName, element) {
             document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
@@ -1400,7 +1378,7 @@
             const input = document.getElementById('discountInput').value.trim().toLowerCase();
             const status = document.getElementById('discountStatus');
 
-            if (input === 'redanks' || input === 'vexo' || input === 'lrry15') {
+            if (input === 'redanks' || input === 'vexo') {
                 discountActive = true;
                 appliedDiscountName = input;
                 status.className = 'discount-status success';
@@ -1408,10 +1386,10 @@
                 updatePricesDisplay();
             } else if (input === '') {
                 status.className = 'discount-status error';
-                status.innerText = 'Enter a valid code below';
+                status.innerText = 'Please enter a valid coupon code.';
             } else {
                 status.className = 'discount-status error';
-                status.innerText = 'Enter a valid code below';
+                status.innerText = 'Invalid coupon code. Please try again.';
             }
         }
 
