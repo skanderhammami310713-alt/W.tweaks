@@ -863,8 +863,7 @@
                     <!-- Fortnite Square Card -->
                     <div class="glass-card tweak-card" style="display: flex; flex-direction: column; align-items: center; text-align: center; max-width: 240px;" onclick="openStoreModal('Fortnite')">
                         <div style="width: 140px; height: 140px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.3); border-radius: 12px; border: 1px solid var(--border-color); overflow: hidden;">
-                            <img src="fortnite-logo.webp" alt="Fortnite" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="fallback-logo" style="display:none; width: 100%; height: 100%; font-size: 48px; border-radius: 0; background: transparent; border: none; font-weight: 900; color: #fff;">F</div>
+                            <div class="fallback-logo" style="width: 100%; height: 100%; font-size: 48px; border-radius: 0; background: transparent; border: none; font-weight: 900; color: var(--accent-blue);">F</div>
                         </div>
                         <h3 style="color: var(--text-main); font-size: 18px; font-weight: 700; margin-bottom: 4px;">Fortnite</h3>
                         <p style="color: var(--text-muted); font-size: 13px;">View optimization tiers.</p>
@@ -884,8 +883,7 @@
                     <!-- Izi Zitouna Payment -->
                     <div class="payment-card">
                         <div class="logo-container">
-                            <img src="izi-zitouna-logo.png" alt="Izi Zitouna Payment" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="fallback-logo" style="display:none;">IZ</div>
+                            <div class="fallback-logo">IZ</div>
                         </div>
                         <span class="payment-title">Izi Zitouna Payment</span>
                     </div>
@@ -893,8 +891,7 @@
                     <!-- Virement Bancaire -->
                     <div class="payment-card">
                         <div class="logo-container">
-                            <img src="bank-logo.webp" alt="Virement Bancaire" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="fallback-logo" style="display:none;">VB</div>
+                            <div class="fallback-logo">VB</div>
                         </div>
                         <span class="payment-title">Virement Bancaire</span>
                     </div>
@@ -902,8 +899,7 @@
                     <!-- Ooredoo Card -->
                     <div class="payment-card">
                         <div class="logo-container">
-                            <img src="ooredoo-logo.webp" alt="Ooredoo Card" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="fallback-logo" style="display:none;">OR</div>
+                            <div class="fallback-logo">OR</div>
                         </div>
                         <span class="payment-title">Ooredoo Card</span>
                     </div>
@@ -919,10 +915,10 @@
 
                 <div class="glass-card discount-card">
                     <h3 style="font-size: 16px; font-weight: 700;">Apply Promo Code</h3>
-                    <p style="color: var(--text-muted); font-size: 13px; margin-top: 4px;">Enter a valid code below (e.g. example).</p>
+                    <p style="color: var(--text-muted); font-size: 13px; margin-top: 4px;">Enter a valid code below (e.g. redanks).</p>
                     
                     <div class="discount-input-group">
-                        <input type="text" id="discountInput" class="discount-input" placeholder="e.g. example">
+                        <input type="text" id="discountInput" class="discount-input" placeholder="e.g. redanks">
                         <button class="btn btn-primary" style="width: auto; padding: 0 24px;" onclick="applyDiscountCode()">Redeem</button>
                     </div>
 
@@ -1026,7 +1022,7 @@
                 <!-- 800 V-Bucks -->
                 <div class="pricing-card">
                     <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
-                        <img src="800-v-bucks.png" alt="800 V-Bucks" style="max-height: 100%; object-fit: contain;">
+                        <div class="fallback-logo" style="width: 60px; height: 60px; border-radius: 50%; font-size: 18px;">V</div>
                     </div>
                     <div style="text-align: center; font-weight: 700; font-size: 16px;">800 V-Bucks</div>
                     <div class="price-box">
@@ -1045,7 +1041,7 @@
                 <!-- 2,400 V-Bucks -->
                 <div class="pricing-card">
                     <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
-                        <img src="2400-v-buck.png" alt="2,400 V-Bucks" style="max-height: 100%; object-fit: contain;">
+                        <div class="fallback-logo" style="width: 60px; height: 60px; border-radius: 50%; font-size: 18px;">V</div>
                     </div>
                     <div style="text-align: center; font-weight: 700; font-size: 16px;">2,400 V-Bucks</div>
                     <div class="price-box">
@@ -1064,7 +1060,7 @@
                 <!-- 4,500 V-Bucks -->
                 <div class="pricing-card">
                     <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
-                        <img src="4500-v-bucks.png" alt="4,500 V-Bucks" style="max-height: 100%; object-fit: contain;">
+                        <div class="fallback-logo" style="width: 60px; height: 60px; border-radius: 50%; font-size: 18px;">V</div>
                     </div>
                     <div style="text-align: center; font-weight: 700; font-size: 16px;">4,500 V-Bucks</div>
                     <div class="price-box">
@@ -1083,7 +1079,7 @@
                 <!-- 12,500 V-Bucks -->
                 <div class="pricing-card">
                     <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
-                        <img src="12500-v-bucks.png" alt="12,500 V-Bucks" style="max-height: 100%; object-fit: contain;">
+                        <div class="fallback-logo" style="width: 60px; height: 60px; border-radius: 50%; font-size: 18px;">V</div>
                     </div>
                     <div style="text-align: center; font-weight: 700; font-size: 16px;">12,500 V-Bucks</div>
                     <div class="price-box">
@@ -1102,7 +1098,8 @@
                 <!-- Fortnite Crew -->
                 <div class="pricing-card">
                     <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
-                        <img src="Fortnite-Crew-Subscription-Logo.png" alt="Fortnite Crew" style="max-height: 100%; object-fit: contain;">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="Fortnite-Crew-Subscription-Logo.png" alt="Fortnite Crew" style="max-height: 100%; object-fit: contain;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="fallback-logo" style="display:flex; width: 60px; height: 60px; border-radius: 50%; font-size: 16px;">CREW</div>
                     </div>
                     <div style="text-align: center; font-weight: 700; font-size: 16px;">Fortnite Crew</div>
                     <div class="price-box">
@@ -1111,7 +1108,7 @@
                             <span class="price-discounted" style="display:none;"></span>
                         </div>
                         <div class="sub-prices">
-                            <span class="sub-original" data-orig="$25.99 • 19.99 €">$25.99 • 19.99 €</span>
+                            <span class="sub-original" data-orig="19,99 € - 25,99 $">45 dt - 19,99 € - 25,99 $</span>
                             <span class="sub-discounted" style="display:none;"></span>
                         </div>
                     </div>
@@ -1121,7 +1118,7 @@
                 <!-- Battle Pass -->
                 <div class="pricing-card">
                     <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
-                        <img src="Battle_Pass_-_Icon_-_Fortnite.png" alt="Battle Pass" style="max-height: 100%; object-fit: contain;">
+                        <div class="fallback-logo" style="display:flex; width: 60px; height: 60px; border-radius: 50%; font-size: 16px;">BP</div>
                     </div>
                     <div style="text-align: center; font-weight: 700; font-size: 16px;">Battle Pass</div>
                     <div class="price-box">
@@ -1130,7 +1127,7 @@
                             <span class="price-discounted" style="display:none;"></span>
                         </div>
                         <div class="sub-prices">
-                            <span class="sub-original" data-orig="$19.99 • 14.99 €">$19.99 • 14.99 €</span>
+                            <span class="sub-original" data-orig="19,99 $ - 14,99 €">39 dt - 19,99 $ - 14,99 €</span>
                             <span class="sub-discounted" style="display:none;"></span>
                         </div>
                     </div>
