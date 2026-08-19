@@ -424,9 +424,9 @@
         .old-price {
             text-decoration: line-through;
             color: var(--error-red);
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 700;
-            margin-right: 8px;
+            margin-right: 6px;
             opacity: 0.8;
         }
 
@@ -457,8 +457,8 @@
             border: 1px solid var(--border-color);
             border-radius: 20px; 
             padding: 40px; 
-            width: 90%; 
-            max-width: 1000px;
+            width: 92%; 
+            max-width: 1150px;
             transform: scale(0.95);
             transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
@@ -485,6 +485,10 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
             margin-top: 30px;
+        }
+
+        .pricing-container.vbucks-grid {
+            grid-template-columns: repeat(3, 1fr);
         }
 
         .pricing-card {
@@ -520,8 +524,8 @@
             border-radius: 8px; padding: 14px; text-align: center; margin: 15px 0;
         }
 
-        .main-price { font-size: 24px; font-weight: 800; color: var(--accent-blue); }
-        .sub-prices { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+        .main-price { font-size: 22px; font-weight: 800; color: var(--accent-blue); }
+        .sub-prices { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
 
         .features-list { list-style: none; margin-bottom: 20px; flex-grow: 1; }
         .features-list li { font-size: 13px; color: #c2cbd6; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
@@ -646,14 +650,6 @@
             margin-bottom: 10px;
         }
 
-        .payment-warning {
-            color: var(--error-red);
-            font-size: 12px;
-            font-weight: 700;
-            margin-top: 4px;
-            display: none;
-        }
-
         .success-message-box {
             display: none;
             background: rgba(0, 230, 118, 0.1);
@@ -672,9 +668,14 @@
             display: block;
         }
 
+        @media (max-width: 950px) {
+            .pricing-container.vbucks-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
         @media (max-width: 850px) {
             .welcome-text { font-size: 40px; }
             .pricing-container { grid-template-columns: 1fr; }
+            .pricing-container.vbucks-grid { grid-template-columns: 1fr; }
             .dashboard-container { flex-direction: column; }
             .sidebar { width: 100%; height: auto; }
             .discount-input-group { flex-direction: column; }
@@ -861,7 +862,10 @@
                 <div class="tweaks-grid">
                     <!-- Fortnite Square Card -->
                     <div class="glass-card tweak-card" style="display: flex; flex-direction: column; align-items: center; text-align: center; max-width: 240px;" onclick="openStoreModal('Fortnite')">
-                        <img src="471_9d140.webp" alt="Fortnite" style="width: 140px; height: 140px; object-fit: cover; border-radius: 12px; margin-bottom: 16px; border: 1px solid var(--border-color);">
+                        <div style="width: 140px; height: 140px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.3); border-radius: 12px; border: 1px solid var(--border-color); overflow: hidden;">
+                            <img src="fortnite-logo.webp" alt="Fortnite" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="fallback-logo" style="display:none; width: 100%; height: 100%; font-size: 48px; border-radius: 0; background: transparent; border: none; font-weight: 900; color: #fff;">F</div>
+                        </div>
                         <h3 style="color: var(--text-main); font-size: 18px; font-weight: 700; margin-bottom: 4px;">Fortnite</h3>
                         <p style="color: var(--text-muted); font-size: 13px;">View optimization tiers.</p>
                         <span class="click-hint">Click to Open →</span>
@@ -938,7 +942,7 @@
         </div>
     </div>
 
-    <!-- Store Modal for Tweaks / Checkout Form -->
+    <!-- Store Modal for Tweaks / V-Bucks / Checkout Form -->
     <div class="modal-overlay" id="storeModal" onclick="closeModal(event)">
         <div class="modal-content">
             <button class="close-btn" onclick="closeModalDirect()">&times;</button>
@@ -951,7 +955,7 @@
                 <span>🔥 You Got 15% Off Active! Prices are updated.</span>
             </div>
 
-            <!-- Pricing Selection View -->
+            <!-- Standard Pricing Selection View -->
             <div id="modalPricingView" class="pricing-container">
                 <div class="pricing-card">
                     <div style="text-align: center; font-weight: 700; font-size: 18px;">Economy</div>
@@ -1017,6 +1021,123 @@
                 </div>
             </div>
 
+            <!-- V-Bucks & Fortnite Items Pricing Selection View -->
+            <div id="vbucksPricingView" class="pricing-container vbucks-grid" style="display: none;">
+                <!-- 800 V-Bucks -->
+                <div class="pricing-card">
+                    <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
+                        <img src="800-v-bucks.png" alt="800 V-Bucks" style="max-height: 100%; object-fit: contain;">
+                    </div>
+                    <div style="text-align: center; font-weight: 700; font-size: 16px;">800 V-Bucks</div>
+                    <div class="price-box">
+                        <div class="main-price">
+                            <span class="price-original" data-orig="39 DT">39 DT</span>
+                            <span class="price-discounted" style="display:none;"></span>
+                        </div>
+                        <div class="sub-prices">
+                            <span class="sub-original" data-orig="$19.99 • 14.99 €">$19.99 • 14.99 €</span>
+                            <span class="sub-discounted" style="display:none;"></span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="openCheckout('800 V-Bucks')">Get Started</button>
+                </div>
+
+                <!-- 2,400 V-Bucks -->
+                <div class="pricing-card">
+                    <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
+                        <img src="2400-v-buck.png" alt="2,400 V-Bucks" style="max-height: 100%; object-fit: contain;">
+                    </div>
+                    <div style="text-align: center; font-weight: 700; font-size: 16px;">2,400 V-Bucks</div>
+                    <div class="price-box">
+                        <div class="main-price">
+                            <span class="price-original" data-orig="77 DT">77 DT</span>
+                            <span class="price-discounted" style="display:none;"></span>
+                        </div>
+                        <div class="sub-prices">
+                            <span class="sub-original" data-orig="$29.99 • 25.99 €">$29.99 • 25.99 €</span>
+                            <span class="sub-discounted" style="display:none;"></span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="openCheckout('2,400 V-Bucks')">Get Started</button>
+                </div>
+
+                <!-- 4,500 V-Bucks -->
+                <div class="pricing-card">
+                    <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
+                        <img src="4500-v-bucks.png" alt="4,500 V-Bucks" style="max-height: 100%; object-fit: contain;">
+                    </div>
+                    <div style="text-align: center; font-weight: 700; font-size: 16px;">4,500 V-Bucks</div>
+                    <div class="price-box">
+                        <div class="main-price">
+                            <span class="price-original" data-orig="120 DT">120 DT</span>
+                            <span class="price-discounted" style="display:none;"></span>
+                        </div>
+                        <div class="sub-prices">
+                            <span class="sub-original" data-orig="$45.99 • 40.99 €">$45.99 • 40.99 €</span>
+                            <span class="sub-discounted" style="display:none;"></span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="openCheckout('4,500 V-Bucks')">Get Started</button>
+                </div>
+
+                <!-- 12,500 V-Bucks -->
+                <div class="pricing-card">
+                    <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
+                        <img src="12500-v-bucks.png" alt="12,500 V-Bucks" style="max-height: 100%; object-fit: contain;">
+                    </div>
+                    <div style="text-align: center; font-weight: 700; font-size: 16px;">12,500 V-Bucks</div>
+                    <div class="price-box">
+                        <div class="main-price">
+                            <span class="price-original" data-orig="275 DT">275 DT</span>
+                            <span class="price-discounted" style="display:none;"></span>
+                        </div>
+                        <div class="sub-prices">
+                            <span class="sub-original" data-orig="$99.99 • 87.99 €">$99.99 • 87.99 €</span>
+                            <span class="sub-discounted" style="display:none;"></span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="openCheckout('12,500 V-Bucks')">Get Started</button>
+                </div>
+
+                <!-- Fortnite Crew -->
+                <div class="pricing-card">
+                    <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
+                        <img src="Fortnite-Crew-Subscription-Logo.png" alt="Fortnite Crew" style="max-height: 100%; object-fit: contain;">
+                    </div>
+                    <div style="text-align: center; font-weight: 700; font-size: 16px;">Fortnite Crew</div>
+                    <div class="price-box">
+                        <div class="main-price">
+                            <span class="price-original" data-orig="45 DT">45 DT</span>
+                            <span class="price-discounted" style="display:none;"></span>
+                        </div>
+                        <div class="sub-prices">
+                            <span class="sub-original" data-orig="$25.99 • 19.99 €">$25.99 • 19.99 €</span>
+                            <span class="sub-discounted" style="display:none;"></span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="openCheckout('Fortnite Crew')">Get Started</button>
+                </div>
+
+                <!-- Battle Pass -->
+                <div class="pricing-card">
+                    <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
+                        <img src="Battle_Pass_-_Icon_-_Fortnite.png" alt="Battle Pass" style="max-height: 100%; object-fit: contain;">
+                    </div>
+                    <div style="text-align: center; font-weight: 700; font-size: 16px;">Battle Pass</div>
+                    <div class="price-box">
+                        <div class="main-price">
+                            <span class="price-original" data-orig="39 DT">39 DT</span>
+                            <span class="price-discounted" style="display:none;"></span>
+                        </div>
+                        <div class="sub-prices">
+                            <span class="sub-original" data-orig="$19.99 • 14.99 €">$19.99 • 14.99 €</span>
+                            <span class="sub-discounted" style="display:none;"></span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="openCheckout('Battle Pass')">Get Started</button>
+                </div>
+            </div>
+
             <!-- Checkout User Details Form View -->
             <div id="checkoutFormView" class="checkout-form-container">
                 <div id="selectedItemDisplay" class="selected-item-display">Selected Item: None</div>
@@ -1038,13 +1159,12 @@
 
                 <div class="form-group">
                     <label>Payment Method</label>
-                    <select id="inputPaymentMethod" class="form-select" onchange="checkPaymentSelection()">
+                    <select id="inputPaymentMethod" class="form-select">
                         <option value="">-- Select Payment Method --</option>
                         <option value="Izi Zitouna Payment">Izi Zitouna Payment</option>
                         <option value="Virement Bancaire">Virement Bancaire</option>
                         <option value="Ooredoo Card">Ooredoo Card</option>
                     </select>
-                    <div id="paymentWarning" class="payment-warning">⚠️ Warning: Bank transfer unavailable</div>
                 </div>
 
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
@@ -1090,13 +1210,12 @@
 
                 <div class="form-group">
                     <label>Payment Method</label>
-                    <select id="macroInputPaymentMethod" class="form-select" onchange="checkMacroPaymentSelection()">
+                    <select id="macroInputPaymentMethod" class="form-select">
                         <option value="">-- Select Payment Method --</option>
                         <option value="Izi Zitouna Payment">Izi Zitouna Payment</option>
                         <option value="Virement Bancaire">Virement Bancaire</option>
                         <option value="Ooredoo Card">Ooredoo Card</option>
                     </select>
-                    <div id="macroPaymentWarning" class="payment-warning">⚠️ Warning: Bank transfer unavailable</div>
                 </div>
 
                 <div style="display: flex; justify-content: flex-end; align-items: center; margin-top: 10px;">
@@ -1130,54 +1249,49 @@
             }
         }
 
-        function openStoreModal(tweakCategory) {
-            document.getElementById('modalPricingView').style.display = 'grid';
+        function openStoreModal(category) {
             document.getElementById('checkoutFormView').classList.remove('active');
             document.getElementById('successMessageBox').classList.remove('show');
-            document.getElementById('modalSubtitle').innerText = `Category: ${tweakCategory} - Choose your plan.`;
+
+            if (category === 'Fortnite') {
+                document.getElementById('modalPricingView').style.display = 'none';
+                document.getElementById('vbucksPricingView').style.display = 'grid';
+                document.getElementById('modalSubtitle').innerText = 'Select your Fortnite items and V-Bucks bundle.';
+            } else {
+                document.getElementById('vbucksPricingView').style.display = 'none';
+                document.getElementById('modalPricingView').style.display = 'grid';
+                document.getElementById('modalSubtitle').innerText = `Category: ${category} - Choose your plan.`;
+            }
+
             document.getElementById('storeModal').classList.add('open');
         }
 
         function openCheckout(productName) {
             selectedProduct = productName;
             document.getElementById('modalPricingView').style.display = 'none';
+            document.getElementById('vbucksPricingView').style.display = 'none';
             document.getElementById('successMessageBox').classList.remove('show');
             document.getElementById('checkoutFormView').classList.add('active');
             document.getElementById('selectedItemDisplay').innerText = `The client want a ${productName}`;
             document.getElementById('modalSubtitle').innerText = 'Complete your contact details below.';
             document.getElementById('inputPaymentMethod').value = '';
-            document.getElementById('paymentWarning').style.display = 'none';
 
             if (authenticatedUser && authenticatedUser.username) {
                 document.getElementById('inputDiscord').value = authenticatedUser.username;
             }
         }
 
-        function checkPaymentSelection() {
-            const val = document.getElementById('inputPaymentMethod').value;
-            const warningEl = document.getElementById('paymentWarning');
-            if (val === 'Virement Bancaire') {
-                warningEl.style.display = 'block';
-            } else {
-                warningEl.style.display = 'none';
-            }
-        }
-
-        function checkMacroPaymentSelection() {
-            const val = document.getElementById('macroInputPaymentMethod').value;
-            const warningEl = document.getElementById('macroPaymentWarning');
-            if (val === 'Virement Bancaire') {
-                warningEl.style.display = 'block';
-            } else {
-                warningEl.style.display = 'none';
-            }
-        }
-
         function backToPricing() {
             document.getElementById('checkoutFormView').classList.remove('active');
-            document.getElementById('modalPricingView').style.display = 'grid';
             document.getElementById('successMessageBox').classList.remove('show');
-            document.getElementById('modalSubtitle').innerText = 'Choose your plan to unlock maximum performance.';
+
+            if (selectedProduct.includes('V-Bucks') || selectedProduct.includes('Fortnite Crew') || selectedProduct.includes('Battle Pass')) {
+                document.getElementById('vbucksPricingView').style.display = 'grid';
+                document.getElementById('modalSubtitle').innerText = 'Select your Fortnite items and V-Bucks bundle.';
+            } else {
+                document.getElementById('modalPricingView').style.display = 'grid';
+                document.getElementById('modalSubtitle').innerText = 'Choose your plan to unlock maximum performance.';
+            }
         }
 
         function submitCheckoutNext() {
@@ -1231,7 +1345,6 @@
             document.getElementById('macroSelectedItemDisplay').innerText = `The client want a ${productName}`;
             document.getElementById('macroModalSubtitle').innerText = 'Complete your contact details below.';
             document.getElementById('macroInputPaymentMethod').value = '';
-            document.getElementById('macroPaymentWarning').style.display = 'none';
             
             if (authenticatedUser && authenticatedUser.username) {
                 document.getElementById('macroInputDiscord').value = authenticatedUser.username;
@@ -1326,22 +1439,19 @@
 
                 if (discountActive) {
                     const origText = origEl.getAttribute('data-orig');
-                    const numMatch = origText.match(/(\d+)/);
-                    if (numMatch) {
-                        const val = parseFloat(numMatch[1]);
-                        const discountedVal = Math.round(val * 0.85);
-                        const unit = origText.replace(numMatch[1], '').trim();
-                        
-                        origEl.className = 'old-price';
-                        discEl.style.display = 'inline';
-                        discEl.className = 'new-price';
-                        discEl.innerText = `${discountedVal} ${unit}`;
-                    }
+                    const updatedOrig = origText.replace(/\d+(\.\d+)?/g, (match) => {
+                        return (Math.round(parseFloat(match) * 0.85 * 100) / 100).toFixed(match.includes('.') ? 2 : 0);
+                    });
+                    
+                    origEl.className = 'old-price';
+                    discEl.style.display = 'inline';
+                    discEl.className = 'new-price';
+                    discEl.innerText = updatedOrig;
 
                     if (subOrigEl && subDiscEl) {
                         const subText = subOrigEl.getAttribute('data-orig');
-                        const updatedSubText = subText.replace(/\d+/g, (match) => {
-                            return Math.round(parseFloat(match) * 0.85);
+                        const updatedSubText = subText.replace(/\d+(\.\d+)?/g, (match) => {
+                            return (Math.round(parseFloat(match) * 0.85 * 100) / 100).toFixed(match.includes('.') ? 2 : 0);
                         });
                         
                         subOrigEl.className = 'old-price';
