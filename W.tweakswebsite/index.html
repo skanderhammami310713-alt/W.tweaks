@@ -990,7 +990,7 @@
                 <span>🔥 You Got 15% Off Active! Prices are updated.</span>
             </div>
 
-            <!-- Modal Search Bar Added Here -->
+            <!-- Modal Search Bar -->
             <div style="margin-top: 20px; display: flex; justify-content: center;">
                 <input type="text" id="modalSearchInput" placeholder="Search items or bundles..." class="discount-input" style="width: 100%; max-width: 450px;" onkeyup="filterModalPricing()">
             </div>
@@ -1657,7 +1657,8 @@
         function openStoreModal(category) {
             document.getElementById('checkoutFormView').classList.remove('active');
             document.getElementById('successMessageBox').classList.remove('show');
-            document.getElementById('modalSearchInput').value = ''; // Reset search input on open
+            document.getElementById('modalSearchInput').value = ''; 
+            document.getElementById('modalSearchInput').parentElement.style.display = 'flex';
 
             if (category === 'Fortnite') {
                 document.getElementById('modalPricingView').style.display = 'none';
@@ -1685,6 +1686,7 @@
                 document.getElementById('modalSubtitle').innerText = `Category: ${category} - Choose your plan.`;
             }
 
+            filterModalPricing();
             document.getElementById('storeModal').classList.add('open');
         }
 
@@ -1696,11 +1698,10 @@
             document.getElementById('playstationPricingView').style.display = 'none';
             document.getElementById('successMessageBox').classList.remove('show');
             document.getElementById('checkoutFormView').classList.add('active');
-            document.getElementById('selectedItemDisplay').innerText = `The client want a ${productName}`;
+            document.getElementById('selectedItemDisplay').innerText = `The client wants a ${productName}`;
             document.getElementById('modalSubtitle').innerText = 'Complete your contact details below.';
             document.getElementById('inputPaymentMethod').value = '';
 
-            // Hide the modal search bar when viewing the checkout form
             document.getElementById('modalSearchInput').parentElement.style.display = 'none';
 
             if (authenticatedUser && authenticatedUser.username) {
@@ -1745,7 +1746,7 @@
 
             const discordPayload = {
                 content: `🚨 **New Purchase Request Received!**\n` +
-                         `• **Product:** The client want a ${selectedProduct}\n` +
+                         `• **Product:** The client wants a ${selectedProduct}\n` +
                          `• **Payment Method:** ${paymentVal}\n` +
                          `• **Discount Used:** ${discountStatusText}\n` +
                          `• **Discord User:** ${discordVal}\n` +
@@ -1780,7 +1781,7 @@
             selectedProduct = productName;
             document.getElementById('macroCheckoutFormView').classList.add('active');
             document.getElementById('macroSuccessMessageBox').classList.remove('show');
-            document.getElementById('macroSelectedItemDisplay').innerText = `The client want a ${productName}`;
+            document.getElementById('macroSelectedItemDisplay').innerText = `The client wants a ${productName}`;
             document.getElementById('macroModalSubtitle').innerText = 'Complete your contact details below.';
             document.getElementById('macroInputPaymentMethod').value = '';
             
@@ -1816,7 +1817,7 @@
 
             const discordPayload = {
                 content: `🚨 **New Purchase Request Received!**\n` +
-                         `• **Product:** The client want a ${selectedProduct}\n` +
+                         `• **Product:** The client wants a ${selectedProduct}\n` +
                          `• **Payment Method:** ${paymentVal}\n` +
                          `• **Discount Used:** ${discountStatusText}\n` +
                          `• **Discord User:** ${discordVal}\n` +
@@ -1875,27 +1876,29 @@
 
                 if (!origEl || !discEl) return;
 
+                const formatDiscount = (text) => {
+                    return text.replace(/(\d+[\.,]?\d*)/g, (match) => {
+                        const cleanNum = parseFloat(match.replace(',', '.'));
+                        const calc = Math.round(cleanNum * 0.85 * 100) / 100;
+                        return match.includes(',') || match.includes('.') 
+                            ? calc.toFixed(2).replace('.', match.includes(',') ? ',' : '.') 
+                            : calc.toString();
+                    });
+                };
+
                 if (discountActive) {
                     const origText = origEl.getAttribute('data-orig');
-                    const updatedOrig = origText.replace(/\d+(\.\d+)?/g, (match) => {
-                        return (Math.round(parseFloat(match) * 0.85 * 100) / 100).toFixed(match.includes('.') ? 2 : 0);
-                    });
-                    
                     origEl.className = 'old-price';
                     discEl.style.display = 'inline';
                     discEl.className = 'new-price';
-                    discEl.innerText = updatedOrig;
+                    discEl.innerText = formatDiscount(origText);
 
                     if (subOrigEl && subDiscEl) {
                         const subText = subOrigEl.getAttribute('data-orig');
-                        const updatedSubText = subText.replace(/\d+(\.\d+)?/g, (match) => {
-                            return (Math.round(parseFloat(match) * 0.85 * 100) / 100).toFixed(match.includes('.') ? 2 : 0);
-                        });
-                        
                         subOrigEl.className = 'old-price';
                         subDiscEl.style.display = 'inline';
                         subDiscEl.className = 'new-price';
-                        subDiscEl.innerText = updatedSubText;
+                        subDiscEl.innerText = formatDiscount(subText);
                     }
                 } else {
                     origEl.className = 'price-original';
