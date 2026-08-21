@@ -701,23 +701,52 @@
             <div class="tab-content active" id="tab-welcome">
                 <div class="header">
                     <div>
-                        <h1>Welcome to W.store</h1>
-                        <p>Explore our exclusive performance tools, macros, and gift cards.</p>
+                        <h1>Welcome to W.store Hub</h1>
+                        <p>Your portal for PC optimizations, macros, and gift cards.</p>
                     </div>
                 </div>
 
-                <div class="glass-card" style="max-width: 850px; margin: 0 auto; text-align: center; padding: 30px;">
-                    <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 20px; color: var(--accent-blue);">Featured Highlights</h3>
-                    
-                    <!-- Slideshow Container -->
-                    <div class="slideshow-container" style="position: relative; width: 100%; height: 380px; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); background: rgba(0,0,0,0.4);">
-                        <img class="slide-img" src="vbucks.png" alt="Slide 1" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 1; transition: opacity 0.6s ease-in-out;">
-                        <img class="slide-img" src="epicgames.png" alt="Slide 2" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 0.6s ease-in-out;">
-                        <img class="slide-img" src="psncards.png" alt="Slide 3" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 0.6s ease-in-out;">
-                        <img class="slide-img" src="battelpass.png" alt="Slide 4" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 0.6s ease-in-out;">
+                <!-- Core Highlights Overview -->
+                <div class="glass-card" style="margin-bottom: 25px; padding: 24px;">
+                    <h3 style="font-size: 18px; font-weight: 700; color: var(--accent-blue); margin-bottom: 12px;">Store Highlights</h3>
+                    <ul class="features-list" style="margin-bottom: 0;">
+                        <li>Input Latency Optimization: Reduce system-level input lag for faster responses.</li>
+                        <li>Custom Macro Packages: Pre-configured input scripts with anti-cheat safety features.</li>
+                        <li>Digital Shop: Instant access to Fortnite V-Bucks, Battle Passes, and Gift Cards.</li>
+                        <li>Promo Discounts: Apply coupon codes in the Discounts tab for 15% off checkouts.</li>
+                    </ul>
+                </div>
+
+                <!-- Navigation Quick-Actions Grid -->
+                <div class="tweaks-grid" style="margin-bottom: 25px;">
+                    <div class="glass-card tweak-card" onclick="switchTab('our-tweaks', document.querySelectorAll('.nav-item')[2])">
+                        <h3>Performance Tweaks</h3>
+                        <p>Explore FPS optimizations and latency reduction setups.</p>
+                        <span class="click-hint">View Tweaks →</span>
                     </div>
 
-                    <p style="color: var(--text-muted); font-size: 14px; margin-top: 20px;">Use the navigation menu on the left to check out our tweaks, view shop items, or redeem coupon codes!</p>
+                    <div class="glass-card tweak-card" onclick="switchTab('macros', document.querySelectorAll('.nav-item')[3])">
+                        <h3>Macro Automation</h3>
+                        <p>Check out automation profiles for Economy, Middle, and Deluxe tiers.</p>
+                        <span class="click-hint">View Macros →</span>
+                    </div>
+
+                    <div class="glass-card tweak-card" onclick="switchTab('shop', document.querySelectorAll('.nav-item')[4])">
+                        <h3>Store Catalog</h3>
+                        <p>Browse digital cards, Fortnite bundles, and store specials.</p>
+                        <span class="click-hint">Open Shop →</span>
+                    </div>
+                </div>
+
+                <!-- Platform Status Bar -->
+                <div class="glass-card" style="display: flex; justify-content: space-between; align-items: center; padding: 18px 24px;">
+                    <div>
+                        <span style="font-weight: 700; font-size: 14px;">System Status: </span>
+                        <span style="color: var(--success-green); font-weight: 700; font-size: 14px;">● All Services Operational</span>
+                    </div>
+                    <div style="font-size: 13px; color: var(--text-muted);">
+                        Instant Delivery via Discord Support
+                    </div>
                 </div>
             </div>
 
@@ -1587,20 +1616,6 @@
         let appliedDiscountName = '';
         let selectedProduct = '';
         let authenticatedUser = null;
-
-        // --- Slideshow Script ---
-        let currentSlideIndex = 0;
-        const slides = document.querySelectorAll('.slide-img');
-
-        function nextSlide() {
-            if (slides.length === 0) return;
-            slides[currentSlideIndex].style.opacity = '0';
-            currentSlideIndex = (currentSlideIndex + 1) % slides.length;
-            slides[currentSlideIndex].style.opacity = '1';
-        }
-
-        // Change image every 2 seconds
-        setInterval(nextSlide, 2000);
 
         // Function to filter shop items on the main shop view
         function filterShop() {
