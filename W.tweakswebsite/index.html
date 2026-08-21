@@ -999,7 +999,7 @@
         </div>
     </div>
 
-    <!-- Store Modal for Tweaks / V-Bucks / Epic Store / Playstation / Checkout Form -->
+    <!-- Store Modal for Tweaks / V-Bucks / Epic Store / Playstation / Xbox / Checkout Form -->
     <div class="modal-overlay" id="storeModal" onclick="closeModal(event)">
         <div class="modal-content">
             <button class="close-btn" onclick="closeModalDirect()">&times;</button>
@@ -1012,7 +1012,7 @@
                 <span>🔥 You Got 15% Off Active! Prices are updated.</span>
             </div>
 
-            <!-- Modal Search Bar Added Here -->
+            <!-- Modal Search Bar -->
             <div style="margin-top: 20px; display: flex; justify-content: center;">
                 <input type="text" id="modalSearchInput" placeholder="Search items or bundles..." class="discount-input" style="width: 100%; max-width: 450px;" onkeyup="filterModalPricing()">
             </div>
@@ -1510,6 +1510,104 @@
                 </div>
             </div>
 
+            <!-- Xbox Gift Cards Pricing Selection View -->
+            <div id="xboxPricingView" class="pricing-container vbucks-grid" style="display: none;">
+                <!-- 10 € Xbox -->
+                <div class="pricing-card">
+                    <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
+                        <img src="xbox.jpg" alt="10 € xbox gift card" style="max-height: 100%; object-fit: contain;" onerror="this.style.display='none'">
+                    </div>
+                    <div style="text-align: center; font-weight: 700; font-size: 15px; min-height: 40px;">10 € xbox gift card</div>
+                    <div class="price-box">
+                        <div class="main-price">
+                            <span class="price-original" data-orig="38 DT">38 DT</span>
+                            <span class="price-discounted" style="display:none;"></span>
+                        </div>
+                        <div class="sub-prices">
+                            <span class="sub-original" data-orig="11 € • 13 $">11 € • 13 $</span>
+                            <span class="sub-discounted" style="display:none;"></span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="openCheckout('10 € xbox gift card')">Get Started</button>
+                </div>
+
+                <!-- 20 € Xbox -->
+                <div class="pricing-card">
+                    <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
+                        <img src="20xbox.jpg" alt="20 € xbox gift card" style="max-height: 100%; object-fit: contain;" onerror="this.style.display='none'">
+                    </div>
+                    <div style="text-align: center; font-weight: 700; font-size: 15px; min-height: 40px;">20 € xbox gift card</div>
+                    <div class="price-box">
+                        <div class="main-price">
+                            <span class="price-original" data-orig="72 DT">72 DT</span>
+                            <span class="price-discounted" style="display:none;"></span>
+                        </div>
+                        <div class="sub-prices">
+                            <span class="sub-original" data-orig="21 € • 24 $">21 € • 24 $</span>
+                            <span class="sub-discounted" style="display:none;"></span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="openCheckout('20 € xbox gift card')">Get Started</button>
+                </div>
+
+                <!-- 30 € Xbox -->
+                <div class="pricing-card">
+                    <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
+                        <img src="30xbox.jpg" alt="30 € xbox gift card" style="max-height: 100%; object-fit: contain;" onerror="this.style.display='none'">
+                    </div>
+                    <div style="text-align: center; font-weight: 700; font-size: 15px; min-height: 40px;">30 € xbox gift card</div>
+                    <div class="price-box">
+                        <div class="main-price">
+                            <span class="price-original" data-orig="111 DT">111 DT</span>
+                            <span class="price-discounted" style="display:none;"></span>
+                        </div>
+                        <div class="sub-prices">
+                            <span class="sub-original" data-orig="32 € • 38 $">32 € • 38 $</span>
+                            <span class="sub-discounted" style="display:none;"></span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="openCheckout('30 € xbox gift card')">Get Started</button>
+                </div>
+
+                <!-- 50 € Xbox -->
+                <div class="pricing-card">
+                    <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
+                        <img src="xbox50.jpg" alt="50 € xbox gift card" style="max-height: 100%; object-fit: contain;" onerror="this.style.display='none'">
+                    </div>
+                    <div style="text-align: center; font-weight: 700; font-size: 15px; min-height: 40px;">50 € xbox gift card</div>
+                    <div class="price-box">
+                        <div class="main-price">
+                            <span class="price-original" data-orig="179 DT">179 DT</span>
+                            <span class="price-discounted" style="display:none;"></span>
+                        </div>
+                        <div class="sub-prices">
+                            <span class="sub-original" data-orig="52 € • 61 $">52 € • 61 $</span>
+                            <span class="sub-discounted" style="display:none;"></span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="openCheckout('50 € xbox gift card')">Get Started</button>
+                </div>
+
+                <!-- 100 € Xbox -->
+                <div class="pricing-card">
+                    <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
+                        <img src="100xbox.jpg" alt="100 € xbox gift card" style="max-height: 100%; object-fit: contain;" onerror="this.style.display='none'">
+                    </div>
+                    <div style="text-align: center; font-weight: 700; font-size: 15px; min-height: 40px;">100 € xbox gift card</div>
+                    <div class="price-box">
+                        <div class="main-price">
+                            <span class="price-original" data-orig="365 DT">365 DT</span>
+                            <span class="price-discounted" style="display:none;"></span>
+                        </div>
+                        <div class="sub-prices">
+                            <span class="sub-original" data-orig="107 € • 125 $">107 € • 125 $</span>
+                            <span class="sub-discounted" style="display:none;"></span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="openCheckout('100 € xbox gift card')">Get Started</button>
+                </div>
+            </div>
+
             <!-- Checkout User Details Form View -->
             <div id="checkoutFormView" class="checkout-form-container">
                 <div id="selectedItemDisplay" class="selected-item-display">Selected Item: None</div>
@@ -1647,7 +1745,8 @@
                 document.getElementById('modalPricingView'),
                 document.getElementById('vbucksPricingView'),
                 document.getElementById('epicPricingView'),
-                document.getElementById('playstationPricingView')
+                document.getElementById('playstationPricingView'),
+                document.getElementById('xboxPricingView')
             ];
 
             containers.forEach(container => {
@@ -1685,24 +1784,35 @@
                 document.getElementById('modalPricingView').style.display = 'none';
                 document.getElementById('epicPricingView').style.display = 'none';
                 document.getElementById('playstationPricingView').style.display = 'none';
+                document.getElementById('xboxPricingView').style.display = 'none';
                 document.getElementById('vbucksPricingView').style.display = 'grid';
                 document.getElementById('modalSubtitle').innerText = 'Select your Fortnite items and V-Bucks bundle.';
             } else if (category === 'Epic Games Store') {
                 document.getElementById('modalPricingView').style.display = 'none';
                 document.getElementById('vbucksPricingView').style.display = 'none';
                 document.getElementById('playstationPricingView').style.display = 'none';
+                document.getElementById('xboxPricingView').style.display = 'none';
                 document.getElementById('epicPricingView').style.display = 'grid';
                 document.getElementById('modalSubtitle').innerText = 'Select your Epic Games Store gift card bundle.';
             } else if (category === 'Playstation') {
                 document.getElementById('modalPricingView').style.display = 'none';
                 document.getElementById('vbucksPricingView').style.display = 'none';
                 document.getElementById('epicPricingView').style.display = 'none';
+                document.getElementById('xboxPricingView').style.display = 'none';
                 document.getElementById('playstationPricingView').style.display = 'grid';
                 document.getElementById('modalSubtitle').innerText = 'Select your PlayStation gift card bundle.';
+            } else if (category === 'Xbox') {
+                document.getElementById('modalPricingView').style.display = 'none';
+                document.getElementById('vbucksPricingView').style.display = 'none';
+                document.getElementById('epicPricingView').style.display = 'none';
+                document.getElementById('playstationPricingView').style.display = 'none';
+                document.getElementById('xboxPricingView').style.display = 'grid';
+                document.getElementById('modalSubtitle').innerText = 'Select your Xbox gift card bundle.';
             } else {
                 document.getElementById('vbucksPricingView').style.display = 'none';
                 document.getElementById('epicPricingView').style.display = 'none';
                 document.getElementById('playstationPricingView').style.display = 'none';
+                document.getElementById('xboxPricingView').style.display = 'none';
                 document.getElementById('modalPricingView').style.display = 'grid';
                 document.getElementById('modalSubtitle').innerText = `Category: ${category} - Choose your plan.`;
             }
@@ -1716,6 +1826,7 @@
             document.getElementById('vbucksPricingView').style.display = 'none';
             document.getElementById('epicPricingView').style.display = 'none';
             document.getElementById('playstationPricingView').style.display = 'none';
+            document.getElementById('xboxPricingView').style.display = 'none';
             document.getElementById('successMessageBox').classList.remove('show');
             document.getElementById('checkoutFormView').classList.add('active');
             document.getElementById('selectedItemDisplay').innerText = `The client want a ${productName}`;
@@ -1743,9 +1854,12 @@
             } else if (selectedProduct.includes('Epic Games Store')) {
                 document.getElementById('epicPricingView').style.display = 'grid';
                 document.getElementById('modalSubtitle').innerText = 'Select your Epic Games Store gift card bundle.';
-            } else if (selectedProduct.includes('PSN') || selectedProduct.includes('gift card')) {
+            } else if (selectedProduct.includes('PSN') || selectedProduct.includes('gift card (fr)') || selectedProduct.includes('gift card (usa)')) {
                 document.getElementById('playstationPricingView').style.display = 'grid';
                 document.getElementById('modalSubtitle').innerText = 'Select your PlayStation gift card bundle.';
+            } else if (selectedProduct.includes('xbox')) {
+                document.getElementById('xboxPricingView').style.display = 'grid';
+                document.getElementById('modalSubtitle').innerText = 'Select your Xbox gift card bundle.';
             } else {
                 document.getElementById('modalPricingView').style.display = 'grid';
                 document.getElementById('modalSubtitle').innerText = 'Choose your plan to unlock maximum performance.';
