@@ -965,6 +965,11 @@
                 <span>🔥 You Got 15% Off Active! Prices are updated.</span>
             </div>
 
+            <!-- Modal Search Bar Added Here -->
+            <div style="margin-top: 20px; display: flex; justify-content: center;">
+                <input type="text" id="modalSearchInput" placeholder="Search items or bundles..." class="discount-input" style="width: 100%; max-width: 450px;" onkeyup="filterModalPricing()">
+            </div>
+
             <!-- Standard Pricing Selection View -->
             <div id="modalPricingView" class="pricing-container">
                 <div class="pricing-card">
@@ -1558,7 +1563,7 @@
         let selectedProduct = '';
         let authenticatedUser = null;
 
-        // Function to filter shop items
+        // Function to filter shop items on the main shop view
         function filterShop() {
             const input = document.getElementById('shopSearch').value.toLowerCase();
             const grid = document.getElementById('tab-shop').querySelector('.tweaks-grid');
@@ -1572,6 +1577,31 @@
                     cards[i].style.display = "none";
                 }
             }
+        }
+
+        // Function to filter pricing cards inside the opened store modal
+        function filterModalPricing() {
+            const query = document.getElementById('modalSearchInput').value.toLowerCase();
+            const containers = [
+                document.getElementById('modalPricingView'),
+                document.getElementById('vbucksPricingView'),
+                document.getElementById('epicPricingView'),
+                document.getElementById('playstationPricingView')
+            ];
+
+            containers.forEach(container => {
+                if (container && container.style.display !== 'none') {
+                    const cards = container.getElementsByClassName('pricing-card');
+                    for (let i = 0; i < cards.length; i++) {
+                        const cardText = cards[i].innerText.toLowerCase();
+                        if (cardText.includes(query)) {
+                            cards[i].style.display = "";
+                        } else {
+                            cards[i].style.display = "none";
+                        }
+                    }
+                }
+            });
         }
 
         function switchTab(tabName, element) {
@@ -1588,6 +1618,7 @@
         function openStoreModal(category) {
             document.getElementById('checkoutFormView').classList.remove('active');
             document.getElementById('successMessageBox').classList.remove('show');
+            document.getElementById('modalSearchInput').value = ''; // Reset search input on open
 
             if (category === 'Fortnite') {
                 document.getElementById('modalPricingView').style.display = 'none';
@@ -1630,6 +1661,9 @@
             document.getElementById('modalSubtitle').innerText = 'Complete your contact details below.';
             document.getElementById('inputPaymentMethod').value = '';
 
+            // Hide the modal search bar when viewing the checkout form
+            document.getElementById('modalSearchInput').parentElement.style.display = 'none';
+
             if (authenticatedUser && authenticatedUser.username) {
                 document.getElementById('inputDiscord').value = authenticatedUser.username;
             }
@@ -1638,6 +1672,9 @@
         function backToPricing() {
             document.getElementById('checkoutFormView').classList.remove('active');
             document.getElementById('successMessageBox').classList.remove('show');
+            document.getElementById('modalSearchInput').parentElement.style.display = 'flex';
+            document.getElementById('modalSearchInput').value = '';
+            filterModalPricing();
 
             if (selectedProduct.includes('V-Bucks') || selectedProduct.includes('Battle Pass')) {
                 document.getElementById('vbucksPricingView').style.display = 'grid';
@@ -1690,11 +1727,13 @@
         function closeModal(event) {
             if (event.target.classList.contains('modal-overlay')) {
                 document.getElementById('storeModal').classList.remove('open');
+                document.getElementById('modalSearchInput').parentElement.style.display = 'flex';
             }
         }
 
         function closeModalDirect() {
             document.getElementById('storeModal').classList.remove('open');
+            document.getElementById('modalSearchInput').parentElement.style.display = 'flex';
         }
 
         // --- Macro Modal Functions ---
