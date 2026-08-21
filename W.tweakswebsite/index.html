@@ -187,6 +187,9 @@
 
         .header {
             margin-bottom: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
         .header h1 {
@@ -678,7 +681,6 @@
         <!-- Sidebar Navigation -->
         <div class="sidebar">
             <div class="brand-header">
-                <!-- Sidebar Header Logo Removed -->
                 <div class="brand-title">W.store</div>
             </div>
             <div class="nav-list">
@@ -838,8 +840,11 @@
             <!-- SHOP TAB -->
             <div class="tab-content active" id="tab-shop">
                 <div class="header">
-                    <h1>Shop</h1>
-                    <p>Explore games and customized performance add-ons.</p>
+                    <div>
+                        <h1>Shop</h1>
+                        <p>Explore games and customized performance add-ons.</p>
+                    </div>
+                    <input type="text" id="shopSearch" placeholder="Search items..." onkeyup="filterShop()" class="discount-input" style="max-width: 250px;">
                 </div>
 
                 <div class="tweaks-grid">
@@ -1552,6 +1557,22 @@
         let appliedDiscountName = '';
         let selectedProduct = '';
         let authenticatedUser = null;
+
+        // Function to filter shop items
+        function filterShop() {
+            const input = document.getElementById('shopSearch').value.toLowerCase();
+            const grid = document.getElementById('tab-shop').querySelector('.tweaks-grid');
+            const cards = grid.getElementsByClassName('glass-card');
+
+            for (let i = 0; i < cards.length; i++) {
+                const title = cards[i].querySelector('h3').innerText.toLowerCase();
+                if (title.includes(input)) {
+                    cards[i].style.display = "";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        }
 
         function switchTab(tabName, element) {
             document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
