@@ -7,6 +7,7 @@
     <meta name="description" content="Official website for W.store system performance and tools.">
     <meta name="google-site-verification" content="9JVDMTtOknv4_TYcl3yTYNh2T254dSzjB1bNI3OFN78" />
     
+    <!-- Browser Tab Favicon Added -->
     <link rel="icon" type="image/png" href="wtweaks-logo.png">
 
     <style>
@@ -40,8 +41,7 @@
                 radial-gradient(circle at 90% 80%, rgba(88, 101, 242, 0.08) 0%, transparent 40%);
             color: var(--text-main);
             min-height: 100vh;
-            overflow-x: hidden;
-            overflow-y: auto;
+            overflow: hidden;
         }
 
         /* --- Welcome Animation Overlay --- */
@@ -72,9 +72,18 @@
         }
 
         @keyframes welcomeIntro {
-            0% { opacity: 0; transform: scale(0.85) translateY(20px); }
-            25%, 75% { opacity: 1; transform: scale(1) translateY(0); }
-            100% { opacity: 0; transform: scale(1.08) translateY(-10px); }
+            0% {
+                opacity: 0;
+                transform: scale(0.85) translateY(20px);
+            }
+            25%, 75% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(1.08) translateY(-10px);
+            }
         }
 
         @keyframes fadeOutOverlay {
@@ -82,7 +91,7 @@
             100% { opacity: 0; visibility: hidden; }
         }
 
-        /* --- Dashboard Container --- */
+        /* --- Dashboard Container & Animations --- */
         .dashboard-container {
             display: flex;
             width: 100vw;
@@ -105,7 +114,6 @@
             display: flex;
             flex-direction: column;
             z-index: 10;
-            flex-shrink: 0;
         }
 
         .brand-header {
@@ -159,7 +167,7 @@
         /* Main Content Layout */
         .main-content {
             flex: 1;
-            padding: 40px 50px;
+            padding: 50px 60px;
             overflow-y: auto;
             position: relative;
         }
@@ -211,8 +219,10 @@
             box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--accent-glow);
         }
 
-        /* Account Card */
-        .account-card { max-width: 600px; }
+        /* Profile Card */
+        .account-card {
+            max-width: 600px;
+        }
 
         .profile-display {
             display: flex;
@@ -226,15 +236,23 @@
         }
 
         .profile-avatar {
-            width: 50px; height: 50px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             border: 2px solid var(--accent-blue);
             box-shadow: 0 0 12px var(--accent-glow);
             object-fit: cover;
         }
 
-        .profile-name { font-size: 16px; font-weight: 700; }
-        .profile-tag { font-size: 13px; color: var(--text-muted); }
+        .profile-name {
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .profile-tag {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
 
         /* Buttons */
         .btn {
@@ -277,18 +295,34 @@
             box-shadow: 0 6px 20px rgba(88, 101, 242, 0.5);
         }
 
-        .btn-discord svg { width: 20px; height: 20px; fill: currentColor; }
+        .btn-discord svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
 
-        /* Grids */
+        /* Grid & Tweaks */
         .tweaks-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
             gap: 20px;
         }
 
-        .tweak-card { cursor: pointer; }
-        .tweak-card h3 { color: var(--accent-blue); font-size: 17px; margin-bottom: 8px; }
-        .tweak-card p { color: var(--text-muted); font-size: 13px; line-height: 1.5; }
+        .tweak-card {
+            cursor: pointer;
+        }
+
+        .tweak-card h3 {
+            color: var(--accent-blue);
+            font-size: 17px;
+            margin-bottom: 8px;
+        }
+
+        .tweak-card p {
+            color: var(--text-muted);
+            font-size: 13px;
+            line-height: 1.5;
+        }
 
         .click-hint {
             display: inline-block;
@@ -299,11 +333,20 @@
             transition: transform 0.2s ease;
         }
 
-        .tweak-card:hover .click-hint { transform: translateX(4px); }
+        .tweak-card:hover .click-hint {
+            transform: translateX(4px);
+        }
 
-        /* Discount Input */
-        .discount-card { max-width: 550px; }
-        .discount-input-group { display: flex; gap: 12px; margin-top: 20px; }
+        /* Discount Input Section */
+        .discount-card {
+            max-width: 550px;
+        }
+
+        .discount-input-group {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
 
         .discount-input {
             flex: 1;
@@ -318,7 +361,9 @@
             transition: border-color 0.25s ease;
         }
 
-        .discount-input:focus { border-color: var(--accent-blue); }
+        .discount-input:focus {
+            border-color: var(--accent-blue);
+        }
 
         .discount-status {
             margin-top: 15px;
@@ -327,9 +372,17 @@
             display: none;
         }
 
-        .discount-status.success { display: block; color: var(--success-green); }
-        .discount-status.error { display: block; color: var(--error-red); }
+        .discount-status.success {
+            display: block;
+            color: var(--success-green);
+        }
 
+        .discount-status.error {
+            display: block;
+            color: var(--error-red);
+        }
+
+        /* Active Discount Banner inside sections */
         .discount-active-banner {
             background: linear-gradient(135deg, rgba(0, 230, 118, 0.15) 0%, rgba(0, 136, 255, 0.15) 100%);
             border: 1px solid var(--success-green);
@@ -342,7 +395,10 @@
             animation: fadeInContent 0.4s ease;
         }
 
-        .discount-active-banner.show { display: flex; }
+        .discount-active-banner.show {
+            display: flex;
+        }
+
         .discount-active-banner span {
             color: var(--success-green);
             font-weight: 800;
@@ -351,6 +407,7 @@
             text-transform: uppercase;
         }
 
+        /* Price Strikethrough Effect */
         .old-price {
             text-decoration: line-through;
             color: var(--error-red);
@@ -360,9 +417,11 @@
             opacity: 0.8;
         }
 
-        .new-price { color: var(--success-green) !important; }
+        .new-price {
+            color: var(--success-green) !important;
+        }
 
-        /* Modal */
+        /* Modern Glass Modal */
         .modal-overlay {
             display: flex;
             visibility: hidden;
@@ -375,7 +434,10 @@
             transition: all 0.3s ease;
         }
 
-        .modal-overlay.open { visibility: visible; opacity: 1; }
+        .modal-overlay.open {
+            visibility: visible;
+            opacity: 1;
+        }
 
         .modal-content {
             background: rgba(12, 16, 25, 0.9);
@@ -392,7 +454,9 @@
             overflow-y: auto;
         }
 
-        .modal-overlay.open .modal-content { transform: scale(1); }
+        .modal-overlay.open .modal-content {
+            transform: scale(1);
+        }
 
         .close-btn {
             position: absolute; top: 20px; right: 24px;
@@ -402,7 +466,7 @@
 
         .close-btn:hover { color: #fff; }
 
-        /* Pricing Grid */
+        /* Store Pricing Grid */
         .pricing-container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -410,7 +474,9 @@
             margin-top: 30px;
         }
 
-        .pricing-container.vbucks-grid { grid-template-columns: repeat(3, 1fr); }
+        .pricing-container.vbucks-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
 
         .pricing-card {
             background: rgba(18, 24, 38, 0.5);
@@ -452,7 +518,7 @@
         .features-list li { font-size: 13px; color: #c2cbd6; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
         .features-list li::before { content: '✓'; color: var(--accent-blue); font-weight: bold; }
 
-        /* Payment Methods Grid */
+        /* Payment Channels Grid Styles */
         .payment-methods-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -481,29 +547,64 @@
         }
 
         .logo-container {
-            width: 75px; height: 75px;
-            display: flex; align-items: center; justify-content: center;
+            width: 75px;
+            height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin-bottom: 15px;
         }
 
         .fallback-logo {
-            width: 100%; height: 100%;
+            width: 100%;
+            height: 100%;
             background: rgba(0, 136, 255, 0.1);
             border: 1px solid rgba(0, 136, 255, 0.3);
             border-radius: 12px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 24px; font-weight: 800; color: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--accent-blue);
         }
 
-        .logo-container img { max-width: 100%; max-height: 100%; object-fit: contain; }
-        .payment-title { font-size: 15px; font-weight: 700; color: var(--text-main); text-align: center; }
+        .logo-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
 
-        /* Checkout Form */
-        .checkout-form-container { display: none; flex-direction: column; gap: 16px; margin-top: 20px; }
-        .checkout-form-container.active { display: flex; }
+        .payment-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-main);
+            text-align: center;
+        }
 
-        .form-group { display: flex; flex-direction: column; gap: 6px; }
-        .form-group label { font-size: 13px; font-weight: 600; color: var(--text-muted); }
+        /* Checkout Form Modal Styles */
+        .checkout-form-container {
+            display: none;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .checkout-form-container.active {
+            display: flex;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .form-group label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
 
         .form-input, .form-select {
             background: rgba(6, 8, 13, 0.7);
@@ -516,8 +617,14 @@
             transition: border-color 0.25s ease;
         }
 
-        .form-input:focus, .form-select:focus { border-color: var(--accent-blue); }
-        .form-select option { background: #0f131d; color: #fff; }
+        .form-input:focus, .form-select:focus {
+            border-color: var(--accent-blue);
+        }
+
+        .form-select option {
+            background: #0f131d;
+            color: #fff;
+        }
 
         .selected-item-display {
             background: rgba(0, 136, 255, 0.1);
@@ -544,7 +651,9 @@
             animation: fadeInContent 0.3s ease;
         }
 
-        .success-message-box.show { display: block; }
+        .success-message-box.show {
+            display: block;
+        }
 
         @media (max-width: 950px) {
             .pricing-container.vbucks-grid { grid-template-columns: repeat(2, 1fr); }
@@ -554,9 +663,8 @@
             .welcome-text { font-size: 40px; }
             .pricing-container { grid-template-columns: 1fr; }
             .pricing-container.vbucks-grid { grid-template-columns: 1fr; }
-            .dashboard-container { flex-direction: column; height: auto; }
+            .dashboard-container { flex-direction: column; }
             .sidebar { width: 100%; height: auto; }
-            .main-content { padding: 25px 20px; }
             .discount-input-group { flex-direction: column; }
         }
     </style>
@@ -586,11 +694,10 @@
                 <div class="nav-item" onclick="switchTab('free-tweaks', this)">Free Tweaks</div>
             </div>
         </div>
-
-        <!-- Main Panel Content -->
+<!-- Main Panel Content -->
         <div class="main-content">
             <!-- WELCOME TAB (DEFAULT ON LOAD) -->
-            <div class="tab-content active" id="tab-welcome">
+            <div class="tab-content active" id="tab-welcome" style="max-height: calc(100vh - 100px); overflow-y: auto; padding-right: 10px;">
                 <div class="header">
                     <div>
                         <h1>Welcome to W.store</h1>
@@ -601,25 +708,22 @@
                 <div class="glass-card" style="max-width: 850px; margin: 0 auto; text-align: center; padding: 30px;">
                     <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 20px; color: var(--accent-blue);">Featured Highlights</h3>
                     
-                    <!-- Fixed Fluid Slideshow Container -->
-                    <div class="slideshow-container" style="position: relative; width: 100%; max-height: 380px; aspect-ratio: 16/9; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); background: rgba(0,0,0,0.4);">
-                        <img class="slide-img" src="02e8b63c-76da-41ea-9539-2e98c440b181.jpg" alt="Slide 1" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 1; transition: opacity 0.6s ease-in-out;" onerror="this.style.opacity='0'">
-                        <img class="slide-img" src="Add a heading.jpg" alt="Slide 2" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 0.6s ease-in-out;" onerror="this.style.opacity='0'">
-                        <img class="slide-img" src="PSNCARDS.jpg" alt="Slide 3" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 0.6s ease-in-out;" onerror="this.style.opacity='0'">
-                        <img class="slide-img" src="battelpass.png" alt="Slide 4" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 0.6s ease-in-out;" onerror="this.style.opacity='0'">
+                    <!-- Slideshow Container -->
+                    <div class="slideshow-container" style="position: relative; width: 100%; height: 380px; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); background: rgba(0,0,0,0.4);">
+                        <img class="slide-img" src="vbucks.png" alt="Slide 1" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 1; transition: opacity 0.6s ease-in-out;">
+                        <img class="slide-img" src="psncards.png" alt="Slide 2" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 0.6s ease-in-out;">
+                        <img class="slide-img" src="epicgames.png" alt="Slide 3" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 0.6s ease-in-out;">
+                        <img class="slide-img" src="battelpass.png" alt="Slide 4" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 0.6s ease-in-out;">
                     </div>
 
                     <p style="color: var(--text-muted); font-size: 14px; margin-top: 20px;">Use the navigation menu on the left to check out our tweaks, view shop items, or redeem coupon codes!</p>
                 </div>
             </div>
-
             <!-- ACCOUNT TAB -->
             <div class="tab-content" id="tab-account">
                 <div class="header">
-                    <div>
-                        <h1>Account Overview</h1>
-                        <p>Connect your Discord profile to view status and active licenses.</p>
-                    </div>
+                    <h1>Account Overview</h1>
+                    <p>Connect your Discord profile to view status and active licenses.</p>
                 </div>
 
                 <div class="glass-card account-card">
@@ -645,10 +749,8 @@
             <!-- OUR TWEAKS TAB -->
             <div class="tab-content" id="tab-our-tweaks">
                 <div class="header">
-                    <div>
-                        <h1>Performance Packages</h1>
-                        <p>Select a category below to explore optimization tiers.</p>
-                    </div>
+                    <h1>Performance Packages</h1>
+                    <p>Select a category below to explore optimization tiers.</p>
                 </div>
 
                 <div id="tweaksDiscountBanner" class="discount-active-banner">
@@ -679,10 +781,8 @@
             <!-- MACROS TAB -->
             <div class="tab-content" id="tab-macros">
                 <div class="header">
-                    <div>
-                        <h1>Custom Macros</h1>
-                        <p>Select a macro tier to unlock specialized input automation.</p>
-                    </div>
+                    <h1>Custom Macros</h1>
+                    <p>Select a macro tier to unlock specialized input automation.</p>
                 </div>
 
                 <div id="macrosDiscountBanner" class="discount-active-banner">
@@ -690,6 +790,7 @@
                 </div>
 
                 <div class="pricing-container">
+                    <!-- Economy -->
                     <div class="pricing-card">
                         <div style="text-align: center; font-weight: 700; font-size: 18px;">Economy</div>
                         <div class="price-box">
@@ -711,6 +812,7 @@
                         <button class="btn btn-primary" onclick="openMacroModal('Economy Macro')">Get Started</button>
                     </div>
 
+                    <!-- Middle Class -->
                     <div class="pricing-card popular">
                         <div class="badge">POPULAR</div>
                         <div style="text-align: center; font-weight: 700; font-size: 18px;">Middle Class</div>
@@ -733,6 +835,7 @@
                         <button class="btn btn-primary" onclick="openMacroModal('Middle Class Macro')">Get Started</button>
                     </div>
 
+                    <!-- Deluxe -->
                     <div class="pricing-card">
                         <div style="text-align: center; font-weight: 700; font-size: 18px;">Deluxe</div>
                         <div class="price-box">
@@ -768,7 +871,8 @@
                 </div>
 
                 <div class="tweaks-grid">
-                    <div class="glass-card tweak-card" style="display: flex; flex-direction: column; align-items: center; text-align: center;" onclick="openStoreModal('Fortnite')">
+                    <!-- Fortnite Square Card -->
+                    <div class="glass-card tweak-card" style="display: flex; flex-direction: column; align-items: center; text-align: center; max-width: 240px;" onclick="openStoreModal('Fortnite')">
                         <div style="width: 140px; height: 140px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.3); border-radius: 12px; border: 1px solid var(--border-color); overflow: hidden;">
                             <img src="fortnite-logo.webp" alt="Fortnite" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="fallback-logo" style="display:none; width: 100%; height: 100%; font-size: 48px; border-radius: 0; background: transparent; border: none; font-weight: 900; color: #fff;">F</div>
@@ -778,7 +882,8 @@
                         <span class="click-hint">Click to Open →</span>
                     </div>
 
-                    <div class="glass-card tweak-card" style="display: flex; flex-direction: column; align-items: center; text-align: center;" onclick="openStoreModal('Epic Games Store')">
+                    <!-- Epic Games Store Square Card -->
+                    <div class="glass-card tweak-card" style="display: flex; flex-direction: column; align-items: center; text-align: center; max-width: 240px;" onclick="openStoreModal('Epic Games Store')">
                         <div style="width: 140px; height: 140px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.3); border-radius: 12px; border: 1px solid var(--border-color); overflow: hidden;">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Epic_Games_logo.svg" alt="Epic Games Store" style="width: 100%; height: 100%; object-fit: contain; padding: 25px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="fallback-logo" style="display:none; width: 100%; height: 100%; font-size: 48px; border-radius: 0; background: transparent; border: none; font-weight: 900; color: #fff;">E</div>
@@ -788,7 +893,8 @@
                         <span class="click-hint">Click to Open →</span>
                     </div>
 
-                    <div class="glass-card tweak-card" style="display: flex; flex-direction: column; align-items: center; text-align: center;" onclick="openStoreModal('Playstation')">
+                    <!-- Playstation Square Card -->
+                    <div class="glass-card tweak-card" style="display: flex; flex-direction: column; align-items: center; text-align: center; max-width: 240px;" onclick="openStoreModal('Playstation')">
                         <div style="width: 140px; height: 140px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.3); border-radius: 12px; border: 1px solid var(--border-color); overflow: hidden;">
                             <img src="icon.jpeg" alt="Playstation" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="fallback-logo" style="display:none; width: 100%; height: 100%; font-size: 48px; border-radius: 0; background: transparent; border: none; font-weight: 900; color: #fff;">P</div>
@@ -803,13 +909,12 @@
             <!-- PAYMENT METHOD TAB -->
             <div class="tab-content" id="tab-payment-methods">
                 <div class="header">
-                    <div>
-                        <h1>Payment Channels</h1>
-                        <p>Available secure payment methods for your checkouts.</p>
-                    </div>
+                    <h1>Payment Channels</h1>
+                    <p>Available secure payment methods for your checkouts.</p>
                 </div>
 
                 <div class="payment-methods-grid">
+                    <!-- Izi Zitouna Payment -->
                     <div class="payment-card">
                         <div class="logo-container">
                             <img src="izi-zitouna-logo.png" alt="Izi Zitouna Payment" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -818,6 +923,7 @@
                         <span class="payment-title">Izi Zitouna Payment</span>
                     </div>
 
+                    <!-- Virement Bancaire -->
                     <div class="payment-card">
                         <div class="logo-container">
                             <img src="bank-logo.webp" alt="Virement Bancaire" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -826,6 +932,7 @@
                         <span class="payment-title">Virement Bancaire</span>
                     </div>
 
+                    <!-- Ooredoo Card -->
                     <div class="payment-card">
                         <div class="logo-container">
                             <img src="ooredoo-logo.webp" alt="Ooredoo Card" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -839,10 +946,8 @@
             <!-- DISCOUNTS TAB -->
             <div class="tab-content" id="tab-discounts">
                 <div class="header">
-                    <div>
-                        <h1>Active Promotions</h1>
-                        <p>Redeem coupon codes to apply a 15% discount across store checkouts.</p>
-                    </div>
+                    <h1>Active Promotions</h1>
+                    <p>Redeem coupon codes to apply a 15% discount across store checkouts.</p>
                 </div>
 
                 <div class="glass-card discount-card">
@@ -860,12 +965,7 @@
 
             <!-- FREE TWEAKS TAB -->
             <div class="tab-content" id="tab-free-tweaks">
-                <div class="header">
-                    <div>
-                        <h1>Community Rewards</h1>
-                        <p>Participate in giveaways and claim free optimization utilities.</p>
-                    </div>
-                </div>
+                <div class="header"><h1>Community Rewards</h1></div>
                 <div class="glass-card">
                     <h3 style="color: var(--accent-blue); margin-bottom: 10px;">Discord Community Giveaways</h3>
                     <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 20px;">Join our official server to claim free optimization utilities and participate in weekly giveaways.</p>
@@ -875,13 +975,618 @@
         </div>
     </div>
 
+    <!-- Store Modal for Tweaks / V-Bucks / Epic Store / Playstation / Checkout Form -->
+    <div class="modal-overlay" id="storeModal" onclick="closeModal(event)">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModalDirect()">&times;</button>
+            <div style="text-align: center;">
+                <h1 style="font-size: 28px; font-weight: 800;">W.store <span style="color: var(--accent-blue);">Store</span></h1>
+                <p id="modalSubtitle" style="color: var(--text-muted); font-size: 14px; margin-top: 4px;">Choose your plan to unlock maximum performance.</p>
+            </div>
+
+            <div id="modalDiscountBanner" class="discount-active-banner" style="margin-top: 20px;">
+                <span>🔥 You Got 15% Off Active! Prices are updated.</span>
+            </div>
+
+            <!-- Modal Search Bar -->
+            <div style="margin-top: 20px; display: flex; justify-content: center;">
+                <input type="text" id="modalSearchInput" placeholder="Search items or bundles..." class="discount-input" style="width: 100%; max-width: 450px;" onkeyup="filterModalPricing()">
+            </div>
+
+            <!-- Standard Pricing Selection View -->
+            <div id="modalPricingView" class="pricing-container">
+                <div class="pricing-card">
+                    <div style="text-align: center; font-weight: 700; font-size: 18px;">Economy</div>
+                    <div class="price-box">
+                        <div class="main-price">
+                            <span class="price-original" data-orig="45 DT">45 DT</span>
+                            <span class="price-discounted" style="display:none;"></span>
+                        </div>
+                        <div class="sub-prices">
+                            <span class="sub-original" data-orig="$15 • 10 €">$15 • 10 €</span>
+                            <span class="sub-discounted" style="display:none;"></span>
+                        </div>
+                    </div>
+                    <ul class="features-list">
+                        <li>Basic CPU Optimization</li>
+                        <li>Timer Resolution Setup</li>
+                        <li>Standard Cleanup Script</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="openCheckout('Economy Tweak')">Get Started</button>
+                </div>
+
+                <div class="pricing-card popular">
+                    <div class="badge">POPULAR</div>
+                    <div style="text-align: center; font-weight: 700; font-size: 18px;">Middle Class</div>
+                    <div class="price-box">
+                        <div class="main-price">
+                            <span class="price-original" data-orig="55 DT">55 DT</span>
+                            <span class="price-discounted" style="display:none;"></span>
+                        </div>
+                        <div class="sub-prices">
+                            <span class="sub-original" data-orig="$20 • 15 €">$20 • 15 €</span>
+                            <span class="sub-discounted" style="display:none;"></span>
+                        </div>
+                    </div>
+                    <ul class="features-list">
+                        <li>Everything in Economy</li>
+                        <li>GPU Low-Latency Tweaks</li>
+                        <li>Network Optimization</li>
+                        <li>Priority Support</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="openCheckout('Middle Class Tweak')">Get Started</button>
+                </div>
+
+                <div class="pricing-card">
+                    <div style="text-align: center; font-weight: 700; font-size: 18px;">Deluxe</div>
+                    <div class="price-box">
+                        <div class="main-price">
+                            <span class="price-original" data-orig="120 DT">120 DT</span>
+                            <span class="price-discounted" style="display:none;"></span>
+                        </div>
+                        <div class="sub-prices">
+                            <span class="sub-original" data-orig="$40 • 35 €">$40 • 35 €</span>
+                            <span class="sub-discounted" style="display:none;"></span>
+                        </div>
+                    </div>
+                    <ul class="features-list">
+                        <li>Full System Overhaul</li>
+                        <li>Custom Driver Profiles</li>
+                        <li>Exclusive Latency Scripts</li>
+                        <li>1-on-1 Remote Support</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="openCheckout('Deluxe Tweak')">Get Started</button>
+                </div>
+            </div>
+
+            <!-- V-Bucks & Fortnite Items Pricing Selection View -->
+            <div id="vbucksPricingView" class="pricing-container vbucks-grid" style="display: none;">
+                <!-- 800 V-Bucks -->
+                <div class="pricing-card">
+                    <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
+                        <img src="800-v-bucks.png" alt="800 V-Bucks" style="max-height: 100%; object-fit: contain;" onerror="this.style.display='none'">
+                    </div>
+                    <div style="text-align: center; font-weight: 700; font-size: 15px; min-height: 40px;">800 V-Bucks</div>
+                    <div class="price-box">
+                        <div class="main-price">
+                            <span class="price-original" data-orig="39 DT">39 DT</span>
+                            <span class="price-discounted" style="display:none;"></span>
+                        </div>
+                        <div class="sub-prices">
+                            <span class="sub-original" data-orig="7,99 $ • 7 €">7,99 $ • 7 €</span>
+                            <span class="sub-discounted" style="display:none;"></span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="openCheckout('800 V-Bucks')">Get Started</button>
+                </div>
+
+                <!-- 2,400 V-Bucks -->
+                <div class="pricing-card">
+                    <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
+                        <img src="2400-v-buck.png" alt="2400 V-Bucks" style="max-height: 100%; object-fit: contain;" onerror="this.style.display='none'">
+                    </div>
+                    <div style="text-align: center; font-weight: 700; font-size: 15px; min-height: 40px;">2,400 V-Bucks</div>
+                    <div class="price-box">
+                        <div class="main-price">
+                            <span class="price-original" data-orig="72 DT">72 DT</span>
+                            <span class="price-discounted" style="display:none;"></span>
+                        </div>
+                        <div class="sub-prices">
+                            <span class="sub-original" data-orig="28,99 $ • 24,99 €">28,99 $ • 24,99 €</span>
+                            <span class="sub-discounted" style="display:none;"></span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="openCheckout('2,400 V-Bucks')">Get Started</button>
+                </div>
+
+                <!-- 4,500 V-Bucks -->
+                <div class="pricing-card">
+                    <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
+                        <img src="4500-v-bucks.png" alt="4500 V-Bucks" style="max-height: 100%; object-fit: contain;" onerror="this.style.display='none'">
+                    </div>
+                    <div style="text-align: center; font-weight: 700; font-size: 15px; min-height: 40px;">4,500 V-Bucks</div>
+                    <div class="price-box">
+                        <div class="main-price">
+                            <span class="price-original" data-orig="100 DT">100 DT</span>
+                            <span class="price-discounted" style="display:none;"></span>
+                        </div>
+                        <div class="sub-prices">
+                            <span class="sub-original" data-orig="34 $ • 29 €">34 $ • 29 €</span>
+                            <span class="sub-discounted" style="display:none;"></span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="openCheckout('4,500 V-Bucks')">Get Started</button>
+                </div>
+
+                <!-- 12,500 V-Bucks -->
+                <div class="pricing-card">
+                    <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
+                        <img src="12500-v-bucks.png" alt="12500 V-Bucks" style="max-height: 100%; object-fit: contain;" onerror="this.style.display='none'">
+                    </div>
+                    <div style="text-align: center; font-weight: 700; font-size: 15px; min-height: 40px;">12,500 V-Bucks</div>
+                    <div class="price-box">
+                        <div class="main-price">
+                            <span class="price-original" data-orig="145 DT">145 DT</span>
+                            <span class="price-discounted" style="display:none;"></span>
+                        </div>
+                        <div class="sub-prices">
+                            <span class="sub-original" data-orig="49 $ • 42 €">49 $ • 42 €</span>
+                            <span class="sub-discounted" style="display:none;"></span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="openCheckout('12,500 V-Bucks')">Get Started</button>
+                </div>
+
+                <!-- Battle Pass -->
+                <div class="pricing-card">
+                    <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
+                        <img src="Battle_Pass_-_Icon_-_Fortnite.png" alt="Battle Pass" style="max-height: 100%; object-fit: contain;" onerror="this.style.display='none'">
+                    </div>
+                    <div style="text-align: center; font-weight: 700; font-size: 15px; min-height: 40px;">Battle Pass</div>
+                    <div class="price-box">
+                        <div class="main-price">
+                            <span class="price-original" data-orig="39 DT">39 DT</span>
+                            <span class="price-discounted" style="display:none;"></span>
+                        </div>
+                        <div class="sub-prices">
+                            <span class="sub-original" data-orig="8,99 $ - 8,99 €">8,99 $ - 8,99 €</span>
+                            <span class="sub-discounted" style="display:none;"></span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="openCheckout('Battle Pass')">Get Started</button>
+                </div>
+            </div>
+
+            <!-- Epic Games Store Gift Cards Pricing Selection View -->
+            <div id="epicPricingView" class="pricing-container vbucks-grid" style="display: none;">
+                <!-- 15$ USA -->
+                <div class="pricing-card">
+                    <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
+                        <img src="15$.png" alt="15$ Gift Card" style="max-height: 100%; object-fit: contain;" onerror="this.style.display='none'">
+                    </div>
+                    <div style="text-align: center; font-weight: 700; font-size: 15px; min-height: 40px;">15 $ Epic Games Store Gift Card (USA)</div>
+                    <div class="price-box">
+                        <div class="main-price">
+                            <span class="price-original" data-orig="76 DT">76 DT</span>
+                            <span class="price-discounted" style="display:none;"></span>
+                        </div>
+                        <div class="sub-prices">
+                            <span class="sub-original" data-orig="26 $ • 22 €">26 $ • 22 €</span>
+                            <span class="sub-discounted" style="display:none;"></span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="openCheckout('15$ Epic Games Store Gift Card (USA)')">Get Started</button>
+                </div>
+
+                <!-- 25$ USA -->
+                <div class="pricing-card">
+                    <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
+                        <img src="25$.png" alt="25$ Gift Card" style="max-height: 100%; object-fit: contain;" onerror="this.style.display='none'">
+                    </div>
+                    <div style="text-align: center; font-weight: 700; font-size: 15px; min-height: 40px;">25 $ Epic Games Store Gift Card (USA)</div>
+                    <div class="price-box">
+                        <div class="main-price">
+                            <span class="price-original" data-orig="120 DT">120 DT</span>
+                            <span class="price-discounted" style="display:none;"></span>
+                        </div>
+                        <div class="sub-prices">
+                            <span class="sub-original" data-orig="41 $ • 35 €">41 $ • 35 €</span>
+                            <span class="sub-discounted" style="display:none;"></span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="openCheckout('25$ Epic Games Store Gift Card (USA)')">Get Started</button>
+                </div>
+
+                <!-- 30$ USA -->
+                <div class="pricing-card">
+                    <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
+                        <img src="30$.png" alt="30$ Gift Card" style="max-height: 100%; object-fit: contain;" onerror="this.style.display='none'">
+                    </div>
+                    <div style="text-align: center; font-weight: 700; font-size: 15px; min-height: 40px;">30 $ Epic Games Store Gift Card (USA)</div>
+                    <div class="price-box">
+                        <div class="main-price">
+                            <span class="price-original" data-orig="132 DT">132 DT</span>
+                            <span class="price-discounted" style="display:none;"></span>
+                        </div>
+                        <div class="sub-prices">
+                            <span class="sub-original" data-orig="45 $ • 38 €">45 $ • 38 €</span>
+                            <span class="sub-discounted" style="display:none;"></span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="openCheckout('30$ Epic Games Store Gift Card (USA)')">Get Started</button>
+                </div>
+
+                <!-- 50$ USA -->
+                <div class="pricing-card">
+                    <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
+                        <img src="50$.png" alt="50$ Gift Card" style="max-height: 100%; object-fit: contain;" onerror="this.style.display='none'">
+                    </div>
+                    <div style="text-align: center; font-weight: 700; font-size: 15px; min-height: 40px;">50 $ Epic Games Store Gift Card (USA)</div>
+                    <div class="price-box">
+                        <div class="main-price">
+                            <span class="price-original" data-orig="200 DT">200 DT</span>
+                            <span class="price-discounted" style="display:none;"></span>
+                        </div>
+                        <div class="sub-prices">
+                            <span class="sub-original" data-orig="69,99 $ • 59,99 €">69,99 $ • 59,99 €</span>
+                            <span class="sub-discounted" style="display:none;"></span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="openCheckout('50$ Epic Games Store Gift Card (USA)')">Get Started</button>
+                </div>
+
+                <!-- 100$ USA -->
+                <div class="pricing-card">
+                    <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
+                        <img src="100 $.png" alt="100$ Gift Card" style="max-height: 100%; object-fit: contain;" onerror="this.style.display='none'">
+                    </div>
+                    <div style="text-align: center; font-weight: 700; font-size: 15px; min-height: 40px;">100 $ Epic Games Store Gift Card (USA)</div>
+                    <div class="price-box">
+                        <div class="main-price">
+                            <span class="price-original" data-orig="385 DT">385 DT</span>
+                            <span class="price-discounted" style="display:none;"></span>
+                        </div>
+                        <div class="sub-prices">
+                            <span class="sub-original" data-orig="132 $ • 114 €">132 $ • 114 €</span>
+                            <span class="sub-discounted" style="display:none;"></span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="openCheckout('100$ Epic Games Store Gift Card (USA)')">Get Started</button>
+                </div>
+
+                <!-- 10€ FR -->
+                <div class="pricing-card">
+                    <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
+                        <img src="10 € .png" alt="10€ Gift Card" style="max-height: 100%; object-fit: contain;" onerror="this.style.display='none'">
+                    </div>
+                    <div style="text-align: center; font-weight: 700; font-size: 15px; min-height: 40px;">10 € Epic Games Store Gift Card (FR)</div>
+                    <div class="price-box">
+                        <div class="main-price">
+                            <span class="price-original" data-orig="45 DT">45 DT</span>
+                            <span class="price-discounted" style="display:none;"></span>
+                        </div>
+                        <div class="sub-prices">
+                            <span class="sub-original" data-orig="16,99 $ • 13,99 €">16,99 $ • 13,99 €</span>
+                            <span class="sub-discounted" style="display:none;"></span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="openCheckout('10€ Epic Games Store Gift Card (FR)')">Get Started</button>
+                </div>
+
+                <!-- 20€ FR -->
+                <div class="pricing-card">
+                    <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
+                        <img src="25 € .png" alt="20€ Gift Card" style="max-height: 100%; object-fit: contain;" onerror="this.style.display='none'">
+                    </div>
+                    <div style="text-align: center; font-weight: 700; font-size: 15px; min-height: 40px;">20 € Epic Games Store Gift Card (FR)</div>
+                    <div class="price-box">
+                        <div class="main-price">
+                            <span class="price-original" data-orig="105 DT">105 DT</span>
+                            <span class="price-discounted" style="display:none;"></span>
+                        </div>
+                        <div class="sub-prices">
+                            <span class="sub-original" data-orig="29,99 $ • 25,99 €">29,99 $ • 25,99 €</span>
+                            <span class="sub-discounted" style="display:none;"></span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="openCheckout('20€ Epic Games Store Gift Card (FR)')">Get Started</button>
+                </div>
+
+                <!-- 50€ FR -->
+                <div class="pricing-card">
+                    <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
+                        <img src="30 € .png" alt="50€ Gift Card" style="max-height: 100%; object-fit: contain;" onerror="this.style.display='none'">
+                    </div>
+                    <div style="text-align: center; font-weight: 700; font-size: 15px; min-height: 40px;">50 € Epic Games Store Gift Card (FR)</div>
+                    <div class="price-box">
+                        <div class="main-price">
+                            <span class="price-original" data-orig="205 DT">205 DT</span>
+                            <span class="price-discounted" style="display:none;"></span>
+                        </div>
+                        <div class="sub-prices">
+                            <span class="sub-original" data-orig="69,99 $ • 59,99 €">69,99 $ • 59,99 €</span>
+                            <span class="sub-discounted" style="display:none;"></span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="openCheckout('50€ Epic Games Store Gift Card (FR)')">Get Started</button>
+                </div>
+
+                <!-- 100€ FR -->
+                <div class="pricing-card">
+                    <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
+                        <img src="100 € .png" alt="100€ Gift Card" style="max-height: 100%; object-fit: contain;" onerror="this.style.display='none'">
+                    </div>
+                    <div style="text-align: center; font-weight: 700; font-size: 15px; min-height: 40px;">100 € Epic Games Store Gift Card (FR)</div>
+                    <div class="price-box">
+                        <div class="main-price">
+                            <span class="price-original" data-orig="385 DT">385 DT</span>
+                            <span class="price-discounted" style="display:none;"></span>
+                        </div>
+                        <div class="sub-prices">
+                            <span class="sub-original" data-orig="132 $ • 114 €">132 $ • 114 €</span>
+                            <span class="sub-discounted" style="display:none;"></span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="openCheckout('100€ Epic Games Store Gift Card (FR)')">Get Started</button>
+                </div>
+            </div>
+
+            <!-- PlayStation Gift Cards Pricing Selection View -->
+            <div id="playstationPricingView" class="pricing-container vbucks-grid" style="display: none;">
+                <!-- 10 € PSN (FR) -->
+                <div class="pricing-card">
+                    <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
+                        <img src="carte-psn-10.webp" alt="10 € PSN gift card (fr)" style="max-height: 100%; object-fit: contain;" onerror="this.style.display='none'">
+                    </div>
+                    <div style="text-align: center; font-weight: 700; font-size: 15px; min-height: 40px;">10 € PSN gift card (fr)</div>
+                    <div class="price-box">
+                        <div class="main-price">
+                            <span class="price-original" data-orig="38 DT">38 DT</span>
+                            <span class="price-discounted" style="display:none;"></span>
+                        </div>
+                        <div class="sub-prices">
+                            <span class="sub-original" data-orig="11 € • 13 $">11 € • 13 $</span>
+                            <span class="sub-discounted" style="display:none;"></span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="openCheckout('10 € PSN gift card (fr)')">Get Started</button>
+                </div>
+
+                <!-- 20 € PSN (FR) -->
+                <div class="pricing-card">
+                    <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
+                        <img src="carte-psn-20.webp" alt="20 € PSN gift card (fr)" style="max-height: 100%; object-fit: contain;" onerror="this.style.display='none'">
+                    </div>
+                    <div style="text-align: center; font-weight: 700; font-size: 15px; min-height: 40px;">20 € PSN gift card (fr)</div>
+                    <div class="price-box">
+                        <div class="main-price">
+                            <span class="price-original" data-orig="72 DT">72 DT</span>
+                            <span class="price-discounted" style="display:none;"></span>
+                        </div>
+                        <div class="sub-prices">
+                            <span class="sub-original" data-orig="21 € • 24 $">21 € • 24 $</span>
+                            <span class="sub-discounted" style="display:none;"></span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="openCheckout('20 € PSN gift card (fr)')">Get Started</button>
+                </div>
+
+                <!-- 50 € PSN (FR) -->
+                <div class="pricing-card">
+                    <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
+                        <img src="carte-psn-50.webp" alt="50 € PSN gift card (fr)" style="max-height: 100%; object-fit: contain;" onerror="this.style.display='none'">
+                    </div>
+                    <div style="text-align: center; font-weight: 700; font-size: 15px; min-height: 40px;">50 € PSN gift card (fr)</div>
+                    <div class="price-box">
+                        <div class="main-price">
+                            <span class="price-original" data-orig="179 DT">179 DT</span>
+                            <span class="price-discounted" style="display:none;"></span>
+                        </div>
+                        <div class="sub-prices">
+                            <span class="sub-original" data-orig="52 € • 61 $">52 € • 61 $</span>
+                            <span class="sub-discounted" style="display:none;"></span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="openCheckout('50 € PSN gift card (fr)')">Get Started</button>
+                </div>
+
+                <!-- 100 € PSN (FR) -->
+                <div class="pricing-card">
+                    <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
+                        <img src="carte-psn-100.webp" alt="100 € PSN gift card (fr)" style="max-height: 100%; object-fit: contain;" onerror="this.style.display='none'">
+                    </div>
+                    <div style="text-align: center; font-weight: 700; font-size: 15px; min-height: 40px;">100 € PSN gift card (fr)</div>
+                    <div class="price-box">
+                        <div class="main-price">
+                            <span class="price-original" data-orig="365 DT">365 DT</span>
+                            <span class="price-discounted" style="display:none;"></span>
+                        </div>
+                        <div class="sub-prices">
+                            <span class="sub-original" data-orig="107 € • 125 $">107 € • 125 $</span>
+                            <span class="sub-discounted" style="display:none;"></span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="openCheckout('100 € PSN gift card (fr)')">Get Started</button>
+                </div>
+
+                <!-- 10 $ PSN (USA) -->
+                <div class="pricing-card">
+                    <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
+                        <img src="carte-psn-10 $.webp" alt="10 $ PSN gift card (usa)" style="max-height: 100%; object-fit: contain;" onerror="this.style.display='none'">
+                    </div>
+                    <div style="text-align: center; font-weight: 700; font-size: 15px; min-height: 40px;">10 $ PSN gift card (usa)</div>
+                    <div class="price-box">
+                        <div class="main-price">
+                            <span class="price-original" data-orig="38 DT">38 DT</span>
+                            <span class="price-discounted" style="display:none;"></span>
+                        </div>
+                        <div class="sub-prices">
+                            <span class="sub-original" data-orig="11 € • 13 $">11 € • 13 $</span>
+                            <span class="sub-discounted" style="display:none;"></span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="openCheckout('10 $ PSN gift card (usa)')">Get Started</button>
+                </div>
+
+                <!-- 20 $ PSN (USA) -->
+                <div class="pricing-card">
+                    <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
+                        <img src="carte-psn-20 $.webp" alt="20 $ PSN gift card (usa)" style="max-height: 100%; object-fit: contain;" onerror="this.style.display='none'">
+                    </div>
+                    <div style="text-align: center; font-weight: 700; font-size: 15px; min-height: 40px;">20 $ PSN gift card (usa)</div>
+                    <div class="price-box">
+                        <div class="main-price">
+                            <span class="price-original" data-orig="72 DT">72 DT</span>
+                            <span class="price-discounted" style="display:none;"></span>
+                        </div>
+                        <div class="sub-prices">
+                            <span class="sub-original" data-orig="21 € • 24 $">21 € • 24 $</span>
+                            <span class="sub-discounted" style="display:none;"></span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="openCheckout('20 $ PSN gift card (usa)')">Get Started</button>
+                </div>
+
+                <!-- 50 $ PSN (USA) -->
+                <div class="pricing-card">
+                    <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
+                        <img src="carte-psn-50 $.webp" alt="50 $ PSN gift card (usa)" style="max-height: 100%; object-fit: contain;" onerror="this.style.display='none'">
+                    </div>
+                    <div style="text-align: center; font-weight: 700; font-size: 15px; min-height: 40px;">50 $ PSN gift card (usa)</div>
+                    <div class="price-box">
+                        <div class="main-price">
+                            <span class="price-original" data-orig="179 DT">179 DT</span>
+                            <span class="price-discounted" style="display:none;"></span>
+                        </div>
+                        <div class="sub-prices">
+                            <span class="sub-original" data-orig="52 € • 61 $">52 € • 61 $</span>
+                            <span class="sub-discounted" style="display:none;"></span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="openCheckout('50 $ PSN gift card (usa)')">Get Started</button>
+                </div>
+
+                <!-- 100 $ PSN (USA) -->
+                <div class="pricing-card">
+                    <div style="width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: rgba(0,0,0,0.2); border-radius: 10px; overflow: hidden;">
+                        <img src="carte-psn-100$.webp" alt="100 $ gift card (usa)" style="max-height: 100%; object-fit: contain;" onerror="this.style.display='none'">
+                    </div>
+                    <div style="text-align: center; font-weight: 700; font-size: 15px; min-height: 40px;">100 $ gift card (usa)</div>
+                    <div class="price-box">
+                        <div class="main-price">
+                            <span class="price-original" data-orig="365 DT">365 DT</span>
+                            <span class="price-discounted" style="display:none;"></span>
+                        </div>
+                        <div class="sub-prices">
+                            <span class="sub-original" data-orig="107 € • 125 $">107 € • 125 $</span>
+                            <span class="sub-discounted" style="display:none;"></span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="openCheckout('100 $ gift card (usa)')">Get Started</button>
+                </div>
+            </div>
+
+            <!-- Checkout User Details Form View -->
+            <div id="checkoutFormView" class="checkout-form-container">
+                <div id="selectedItemDisplay" class="selected-item-display">Selected Item: None</div>
+                
+                <div class="form-group">
+                    <label>Discord User Name</label>
+                    <input type="text" id="inputDiscord" class="form-input" placeholder="e.g. username#0000">
+                </div>
+
+                <div class="form-group">
+                    <label>Name (IRL)</label>
+                    <input type="text" id="inputIrlName" class="form-input" placeholder="e.g. John Doe">
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="inputEmail" class="form-input" placeholder="e.g. name@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label>Payment Method</label>
+                    <select id="inputPaymentMethod" class="form-select">
+                        <option value="">-- Select Payment Method --</option>
+                        <option value="Izi Zitouna Payment">Izi Zitouna Payment</option>
+                        <option value="Virement Bancaire">Virement Bancaire</option>
+                        <option value="Ooredoo Card">Ooredoo Card</option>
+                    </select>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+                    <button class="btn btn-discord" style="width: auto; padding: 10px 20px; margin: 0;" onclick="backToPricing()">← Back</button>
+                    <button class="btn btn-primary" style="width: auto; padding: 10px 24px;" onclick="submitCheckoutNext()">Next →</button>
+                </div>
+            </div>
+
+            <!-- Success Message Box -->
+            <div id="successMessageBox" class="success-message-box">
+                The support team will contact you as soon as possible on the discord platform or in a email
+            </div>
+        </div>
+    </div>
+
+    <!-- Macro Checkout Modal -->
+    <div class="modal-overlay" id="macroModal" onclick="closeMacroModal(event)">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeMacroModalDirect()">&times;</button>
+            <div style="text-align: center;">
+                <h1 style="font-size: 28px; font-weight: 800;">W.store <span style="color: var(--accent-blue);">Macro Checkout</span></h1>
+                <p id="macroModalSubtitle" style="color: var(--text-muted); font-size: 14px; margin-top: 4px;">Complete your contact details below.</p>
+            </div>
+
+            <!-- Macro Checkout User Details Form View -->
+            <div id="macroCheckoutFormView" class="checkout-form-container active" style="margin-top: 25px;">
+                <div id="macroSelectedItemDisplay" class="selected-item-display">Selected Item: None</div>
+                
+                <div class="form-group">
+                    <label>Discord User Name</label>
+                    <input type="text" id="macroInputDiscord" class="form-input" placeholder="e.g. username#0000">
+                </div>
+
+                <div class="form-group">
+                    <label>Name (IRL)</label>
+                    <input type="text" id="macroInputIrlName" class="form-input" placeholder="e.g. John Doe">
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="macroInputEmail" class="form-input" placeholder="e.g. name@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label>Payment Method</label>
+                    <select id="macroInputPaymentMethod" class="form-select">
+                        <option value="">-- Select Payment Method --</option>
+                        <option value="Izi Zitouna Payment">Izi Zitouna Payment</option>
+                        <option value="Virement Bancaire">Virement Bancaire</option>
+                        <option value="Ooredoo Card">Ooredoo Card</option>
+                    </select>
+                </div>
+
+                <div style="display: flex; justify-content: flex-end; align-items: center; margin-top: 10px;">
+                    <button class="btn btn-primary" style="width: auto; padding: 10px 24px;" onclick="submitMacroCheckoutNext()">Next →</button>
+                </div>
+            </div>
+
+            <!-- Macro Success Message Box -->
+            <div id="macroSuccessMessageBox" class="success-message-box">
+                The support team will contact you as soon as possible on the discord platform or in a email
+            </div>
+        </div>
+    </div>
+
     <script>
+        const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1539347836037238806/0UOr9pDrvSCClqkA0sgJnl69VtUe1JRx7SqVSPX5yav-Suf_lyy4epxSXi9l_9U88Q0C';
+
         let discountActive = false;
         let appliedDiscountName = '';
         let selectedProduct = '';
         let authenticatedUser = null;
 
-        // Dynamic Safe Slideshow Loop
+        // --- Slideshow Script ---
         let currentSlideIndex = 0;
         const slides = document.querySelectorAll('.slide-img');
 
@@ -892,7 +1597,49 @@
             slides[currentSlideIndex].style.opacity = '1';
         }
 
-        setInterval(nextSlide, 3000);
+        // Change image every 2 seconds
+        setInterval(nextSlide, 2000);
+
+        // Function to filter shop items on the main shop view
+        function filterShop() {
+            const input = document.getElementById('shopSearch').value.toLowerCase();
+            const grid = document.getElementById('tab-shop').querySelector('.tweaks-grid');
+            const cards = grid.getElementsByClassName('glass-card');
+
+            for (let i = 0; i < cards.length; i++) {
+                const title = cards[i].querySelector('h3').innerText.toLowerCase();
+                if (title.includes(input)) {
+                    cards[i].style.display = "";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        }
+
+        // Function to filter pricing cards inside the opened store modal
+        function filterModalPricing() {
+            const query = document.getElementById('modalSearchInput').value.toLowerCase();
+            const containers = [
+                document.getElementById('modalPricingView'),
+                document.getElementById('vbucksPricingView'),
+                document.getElementById('epicPricingView'),
+                document.getElementById('playstationPricingView')
+            ];
+
+            containers.forEach(container => {
+                if (container && container.style.display !== 'none') {
+                    const cards = container.getElementsByClassName('pricing-card');
+                    for (let i = 0; i < cards.length; i++) {
+                        const cardText = cards[i].innerText.toLowerCase();
+                        if (cardText.includes(query)) {
+                            cards[i].style.display = "";
+                        } else {
+                            cards[i].style.display = "none";
+                        }
+                    }
+                }
+            });
+        }
 
         function switchTab(tabName, element) {
             document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
@@ -905,16 +1652,290 @@
             }
         }
 
-        function filterShop() {
-            const input = document.getElementById('shopSearch').value.toLowerCase();
-            const grid = document.getElementById('tab-shop').querySelector('.tweaks-grid');
-            const cards = grid.getElementsByClassName('glass-card');
+        function openStoreModal(category) {
+            document.getElementById('checkoutFormView').classList.remove('active');
+            document.getElementById('successMessageBox').classList.remove('show');
+            document.getElementById('modalSearchInput').value = ''; 
+            document.getElementById('modalSearchInput').parentElement.style.display = 'flex';
 
-            for (let i = 0; i < cards.length; i++) {
-                const title = cards[i].querySelector('h3').innerText.toLowerCase();
-                cards[i].style.display = title.includes(input) ? "" : "none";
+            if (category === 'Fortnite') {
+                document.getElementById('modalPricingView').style.display = 'none';
+                document.getElementById('epicPricingView').style.display = 'none';
+                document.getElementById('playstationPricingView').style.display = 'none';
+                document.getElementById('vbucksPricingView').style.display = 'grid';
+                document.getElementById('modalSubtitle').innerText = 'Select your Fortnite items and V-Bucks bundle.';
+            } else if (category === 'Epic Games Store') {
+                document.getElementById('modalPricingView').style.display = 'none';
+                document.getElementById('vbucksPricingView').style.display = 'none';
+                document.getElementById('playstationPricingView').style.display = 'none';
+                document.getElementById('epicPricingView').style.display = 'grid';
+                document.getElementById('modalSubtitle').innerText = 'Select your Epic Games Store gift card bundle.';
+            } else if (category === 'Playstation') {
+                document.getElementById('modalPricingView').style.display = 'none';
+                document.getElementById('vbucksPricingView').style.display = 'none';
+                document.getElementById('epicPricingView').style.display = 'none';
+                document.getElementById('playstationPricingView').style.display = 'grid';
+                document.getElementById('modalSubtitle').innerText = 'Select your PlayStation gift card bundle.';
+            } else {
+                document.getElementById('vbucksPricingView').style.display = 'none';
+                document.getElementById('epicPricingView').style.display = 'none';
+                document.getElementById('playstationPricingView').style.display = 'none';
+                document.getElementById('modalPricingView').style.display = 'grid';
+                document.getElementById('modalSubtitle').innerText = `Category: ${category} - Choose your plan.`;
+            }
+
+            filterModalPricing();
+            document.getElementById('storeModal').classList.add('open');
+        }
+
+        function openCheckout(productName) {
+            selectedProduct = productName;
+            document.getElementById('modalPricingView').style.display = 'none';
+            document.getElementById('vbucksPricingView').style.display = 'none';
+            document.getElementById('epicPricingView').style.display = 'none';
+            document.getElementById('playstationPricingView').style.display = 'none';
+            document.getElementById('successMessageBox').classList.remove('show');
+            document.getElementById('checkoutFormView').classList.add('active');
+            document.getElementById('selectedItemDisplay').innerText = `The client wants a ${productName}`;
+            document.getElementById('modalSubtitle').innerText = 'Complete your contact details below.';
+            document.getElementById('inputPaymentMethod').value = '';
+
+            document.getElementById('modalSearchInput').parentElement.style.display = 'none';
+
+            if (authenticatedUser && authenticatedUser.username) {
+                document.getElementById('inputDiscord').value = authenticatedUser.username;
             }
         }
+
+        function backToPricing() {
+            document.getElementById('checkoutFormView').classList.remove('active');
+            document.getElementById('successMessageBox').classList.remove('show');
+            document.getElementById('modalSearchInput').parentElement.style.display = 'flex';
+            document.getElementById('modalSearchInput').value = '';
+            filterModalPricing();
+
+            if (selectedProduct.includes('V-Bucks') || selectedProduct.includes('Battle Pass')) {
+                document.getElementById('vbucksPricingView').style.display = 'grid';
+                document.getElementById('modalSubtitle').innerText = 'Select your Fortnite items and V-Bucks bundle.';
+            } else if (selectedProduct.includes('Epic Games Store')) {
+                document.getElementById('epicPricingView').style.display = 'grid';
+                document.getElementById('modalSubtitle').innerText = 'Select your Epic Games Store gift card bundle.';
+            } else if (selectedProduct.includes('PSN') || selectedProduct.includes('gift card')) {
+                document.getElementById('playstationPricingView').style.display = 'grid';
+                document.getElementById('modalSubtitle').innerText = 'Select your PlayStation gift card bundle.';
+            } else {
+                document.getElementById('modalPricingView').style.display = 'grid';
+                document.getElementById('modalSubtitle').innerText = 'Choose your plan to unlock maximum performance.';
+            }
+        }
+
+        function submitCheckoutNext() {
+            const discordVal = document.getElementById('inputDiscord').value.trim();
+            const irlVal = document.getElementById('inputIrlName').value.trim();
+            const emailVal = document.getElementById('inputEmail').value.trim();
+            const paymentVal = document.getElementById('inputPaymentMethod').value;
+
+            if (!discordVal || !irlVal || !emailVal || !paymentVal) {
+                alert('Please fill in all the required fields, including the payment method.');
+                return;
+            }
+
+            const discountStatusText = discountActive ? `Yes (Code: ${appliedDiscountName.toUpperCase()})` : `No`;
+
+            const discordPayload = {
+                content: `🚨 **New Purchase Request Received!**\n` +
+                         `• **Product:** The client wants a ${selectedProduct}\n` +
+                         `• **Payment Method:** ${paymentVal}\n` +
+                         `• **Discount Used:** ${discountStatusText}\n` +
+                         `• **Discord User:** ${discordVal}\n` +
+                         `• **IRL Name:** ${irlVal}\n` +
+                         `• **Email:** ${emailVal}`
+            };
+
+            fetch(DISCORD_WEBHOOK_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(discordPayload)
+            }).catch(err => console.error('Error sending webhook:', err));
+
+            document.getElementById('checkoutFormView').classList.remove('active');
+            document.getElementById('successMessageBox').classList.add('show');
+        }
+
+        function closeModal(event) {
+            if (event.target.classList.contains('modal-overlay')) {
+                document.getElementById('storeModal').classList.remove('open');
+                document.getElementById('modalSearchInput').parentElement.style.display = 'flex';
+            }
+        }
+
+        function closeModalDirect() {
+            document.getElementById('storeModal').classList.remove('open');
+            document.getElementById('modalSearchInput').parentElement.style.display = 'flex';
+        }
+
+        // --- Macro Modal Functions ---
+        function openMacroModal(productName) {
+            selectedProduct = productName;
+            document.getElementById('macroCheckoutFormView').classList.add('active');
+            document.getElementById('macroSuccessMessageBox').classList.remove('show');
+            document.getElementById('macroSelectedItemDisplay').innerText = `The client wants a ${productName}`;
+            document.getElementById('macroModalSubtitle').innerText = 'Complete your contact details below.';
+            document.getElementById('macroInputPaymentMethod').value = '';
+            
+            if (authenticatedUser && authenticatedUser.username) {
+                document.getElementById('macroInputDiscord').value = authenticatedUser.username;
+            }
+
+            document.getElementById('macroModal').classList.add('open');
+        }
+
+        function closeMacroModal(event) {
+            if (event.target.classList.contains('modal-overlay')) {
+                document.getElementById('macroModal').classList.remove('open');
+            }
+        }
+
+        function closeMacroModalDirect() {
+            document.getElementById('macroModal').classList.remove('open');
+        }
+
+        function submitMacroCheckoutNext() {
+            const discordVal = document.getElementById('macroInputDiscord').value.trim();
+            const irlVal = document.getElementById('macroInputIrlName').value.trim();
+            const emailVal = document.getElementById('macroInputEmail').value.trim();
+            const paymentVal = document.getElementById('macroInputPaymentMethod').value;
+
+            if (!discordVal || !irlVal || !emailVal || !paymentVal) {
+                alert('Please fill in all the required fields, including the payment method.');
+                return;
+            }
+
+            const discountStatusText = discountActive ? `Yes (Code: ${appliedDiscountName.toUpperCase()})` : `No`;
+
+            const discordPayload = {
+                content: `🚨 **New Purchase Request Received!**\n` +
+                         `• **Product:** The client wants a ${selectedProduct}\n` +
+                         `• **Payment Method:** ${paymentVal}\n` +
+                         `• **Discount Used:** ${discountStatusText}\n` +
+                         `• **Discord User:** ${discordVal}\n` +
+                         `• **IRL Name:** ${irlVal}\n` +
+                         `• **Email:** ${emailVal}`
+            };
+
+            fetch(DISCORD_WEBHOOK_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(discordPayload)
+            }).catch(err => console.error('Error sending macro webhook:', err));
+
+            document.getElementById('macroCheckoutFormView').classList.remove('active');
+            document.getElementById('macroSuccessMessageBox').classList.add('show');
+        }
+
+        function applyDiscountCode() {
+            const input = document.getElementById('discountInput').value.trim().toLowerCase();
+            const status = document.getElementById('discountStatus');
+
+            if (input === 'redanks' || input === 'vexo' || input === 'lrry15') {
+                discountActive = true;
+                appliedDiscountName = input;
+                status.className = 'discount-status success';
+                status.innerText = `✓ Coupon code "${input.toUpperCase()}" applied successfully! 15% discount is now active across store checkouts.`;
+                updatePricesDisplay();
+            } else if (input === '') {
+                status.className = 'discount-status error';
+                status.innerText = 'Please enter a valid coupon code.';
+            } else {
+                status.className = 'discount-status error';
+                status.innerText = 'Invalid coupon code. Please try again.';
+            }
+        }
+
+        function updatePricesDisplay() {
+            const banners = [
+                document.getElementById('tweaksDiscountBanner'),
+                document.getElementById('macrosDiscountBanner'),
+                document.getElementById('modalDiscountBanner')
+            ];
+
+            banners.forEach(banner => {
+                if (banner) {
+                    if (discountActive) banner.classList.add('show');
+                    else banner.classList.remove('show');
+                }
+            });
+
+            document.querySelectorAll('.pricing-card').forEach(card => {
+                const origEl = card.querySelector('.price-original');
+                const discEl = card.querySelector('.price-discounted');
+                const subOrigEl = card.querySelector('.sub-original');
+                const subDiscEl = card.querySelector('.sub-discounted');
+
+                if (!origEl || !discEl) return;
+
+                const formatDiscount = (text) => {
+                    return text.replace(/(\d+[\.,]?\d*)/g, (match) => {
+                        const cleanNum = parseFloat(match.replace(',', '.'));
+                        const calc = Math.round(cleanNum * 0.85 * 100) / 100;
+                        return match.includes(',') || match.includes('.') 
+                            ? calc.toFixed(2).replace('.', match.includes(',') ? ',' : '.') 
+                            : calc.toString();
+                    });
+                };
+
+                if (discountActive) {
+                    const origText = origEl.getAttribute('data-orig');
+                    origEl.className = 'old-price';
+                    discEl.style.display = 'inline';
+                    discEl.className = 'new-price';
+                    discEl.innerText = formatDiscount(origText);
+
+                    if (subOrigEl && subDiscEl) {
+                        const subText = subOrigEl.getAttribute('data-orig');
+                        subOrigEl.className = 'old-price';
+                        subDiscEl.style.display = 'inline';
+                        subDiscEl.className = 'new-price';
+                        subDiscEl.innerText = formatDiscount(subText);
+                    }
+                } else {
+                    origEl.className = 'price-original';
+                    discEl.style.display = 'none';
+
+                    if (subOrigEl && subDiscEl) {
+                        subOrigEl.className = 'sub-original';
+                        subDiscEl.style.display = 'none';
+                    }
+                }
+            });
+        }
+
+        function triggerDiscordAuth() {
+            const width = 500, height = 750;
+            const left = (screen.width / 2) - (width / 2);
+            const top = (screen.height / 2) - (height / 2);
+            
+            window.open(
+                '/login.html', 
+                'DiscordOAuth2', 
+                `width=${width},height=${height},top=${top},left=${left}`
+            );
+        }
+
+        window.addEventListener('message', (event) => {
+            const user = event.data;
+            if (user && user.username) {
+                authenticatedUser = user;
+                document.getElementById('usernameText').innerText = user.username;
+                document.getElementById('statusText').innerText = "Authenticated (ID: " + user.id + ")";
+                
+                const avatarUrl = user.avatar 
+                    ? `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png` 
+                    : 'https://cdn.discordapp.com/embed/avatars/0.png';
+                    
+                document.getElementById('avatarImg').src = avatarUrl;
+            }
+        });
     </script>
 </body>
 </html>
