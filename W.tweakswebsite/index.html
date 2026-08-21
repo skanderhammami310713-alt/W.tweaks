@@ -1875,12 +1875,12 @@
                 if (!origEl || !discEl) return;
 
                 const formatDiscount = (text) => {
-                    return text.replace(/(\d+[\.,]?\d*)/g, (match) => {
+                    return text.replace(/\d+([,\.]\d+)?/g, (match) => {
                         const cleanNum = parseFloat(match.replace(',', '.'));
                         const calc = Math.round(cleanNum * 0.85 * 100) / 100;
-                        return match.includes(',') || match.includes('.') 
-                            ? calc.toFixed(2).replace('.', match.includes(',') ? ',' : '.') 
-                            : calc.toString();
+                        return match.includes(',') 
+                            ? calc.toFixed(2).replace('.', ',') 
+                            : (match.includes('.') ? calc.toFixed(2) : calc.toString());
                     });
                 };
 
